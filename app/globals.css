@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #5e6fb5;
+  --primary-hover: #47579a;
+  --primary-dark: #36437a;
+  --accent: #ee6196;
+  --accent-hover: #ea347a;
+  --dark-bg: #07132b;
+  --dark-surface: #0c1b3d;
+  --text-main: #212529;
+  --text-muted: #677289;
+  --bg-light: #f8f9fc;
+  --border-color: #e8ecef;
+}
+
+@layer base {
+  * {
+    border-color: var(--border-color);
+  }
+  
+  html {
+    scroll-behavior: auto;
+    scroll-padding-top: 85px;
+  }
+
+  html.lenis,
+  html.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: var(--text-main);
+    font-family: var(--font-roboto), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-barlow), sans-serif;
+    letter-spacing: -0.02em;
+    color: #121c32;
+  }
+
+  ::selection {
+    background-color: #5e6fb5;
+    color: #ffffff;
+  }
+}
+
+/* Editech background dots & grid styling */
+.bg-editech-dots {
+  background-image: radial-gradient(rgba(94, 111, 181, 0.15) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+.bg-editech-dots-dark {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+/* Glassmorphism card */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-panel-dark {
+  background: rgba(12, 27, 61, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f4f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd2e3;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5e6fb5;
+}
+
+/* Editech animated gradient border */
+.gradient-border-bottom {
+  position: relative;
+}
+.gradient-border-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #5e6fb5 0%, #ee6196 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.gradient-border-bottom:hover::after {
+  opacity: 1;
+}
+
+/* Floating decorative shapes hardware layer */
+.animate-float-slow {
+  will-change: transform;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
