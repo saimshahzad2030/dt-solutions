@@ -48,11 +48,10 @@ export function PortfolioShowcase() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 py-1.5 rounded-full text-xs font-heading font-semibold uppercase tracking-wider transition-all ${
-                    selectedCategory === cat
-                      ? "bg-[#5e6fb5] text-white shadow-sm"
-                      : "bg-[#f8f9fc] text-slate-700 hover:text-[#5e6fb5]"
-                  }`}
+                  className={`px-4 py-1.5 rounded-full text-xs font-heading font-semibold uppercase tracking-wider transition-all ${selectedCategory === cat
+                    ? "bg-[#5e6fb5] text-white shadow-sm"
+                    : "bg-[#f8f9fc] text-slate-700 hover:text-[#5e6fb5]"
+                    }`}
                 >
                   {cat}
                 </button>
@@ -93,10 +92,10 @@ export function PortfolioShowcase() {
 
                   {/* Bottom Content Overlay */}
                   <div className="absolute bottom-0 inset-x-0 p-6 z-10 text-white transform transition-transform duration-300">
-                    <span className="text-xs text-slate-300 block mb-1">
+                    <span className="text-xs text-slate-100 block mb-1 font-bold">
                       Client: {project.client}
                     </span>
-                    <h3 className="font-heading text-xl sm:text-2xl font-bold leading-snug group-hover:text-[#f78da7] transition-colors mb-3">
+                    <h3 className="font-heading text-xl text-white sm:text-2xl font-bold leading-snug group-hover:text-[#f78da7] transition-colors mb-3 ">
                       <Link href={`/portfolio/${project.slug}`}>
                         {project.title}
                       </Link>

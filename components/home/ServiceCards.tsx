@@ -60,17 +60,20 @@ export function ServiceCards() {
               >
                 <div>
                   {/* Top Image with Icon Overlay */}
-                  <div className="relative h-56 w-full overflow-hidden">
-                    <Image
-                      src={item.img}
-                      alt={service.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
+                  <div className="relative h-56 w-full">
+                    {/* Image wrapper */}
+                    <div className="absolute inset-0 overflow-hidden">
+                      <Image
+                        src={item.img}
+                        alt={service.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
+                    </div>
 
                     {/* Floating Circular Icon Badge */}
-                    <div className="absolute -bottom-6 right-6 w-14 h-14 rounded-2xl bg-[#5e6fb5] text-white flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:bg-[#ee6196] group-hover:scale-110">
+                    <div className="absolute -bottom-6 right-6 z-10 w-14 h-14 rounded-2xl bg-[#5e6fb5] text-white flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:bg-[#ee6196] group-hover:scale-110">
                       <Icon className="w-6 h-6" />
                     </div>
                   </div>
