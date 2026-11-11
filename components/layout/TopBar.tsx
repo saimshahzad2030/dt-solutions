@@ -10,10 +10,10 @@ export function TopBar() {
         <div className="flex items-center justify-between h-11">
           {/* Left contact & operating hours */}
           <div className="flex items-center space-x-6">
-            <div className="flex items-center gap-2">
+            {/* <div className="flex items-center gap-2">
               <MapPin className="w-3.5 h-3.5 text-[#ee6196]" />
               <span>{companyData.location}</span>
-            </div>
+            </div> */}
 
             <div className="flex items-center gap-2 border-l border-white/10 pl-6">
               <Mail className="w-3.5 h-3.5 text-[#5e6fb5]" />

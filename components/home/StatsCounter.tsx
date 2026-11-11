@@ -49,7 +49,7 @@ export function StatsCounter() {
             <div className="pt-4 flex items-center gap-6" {...motionProps({ preset: "scale-in", delay: 250 })}>
               <div className="flex items-baseline gap-1">
                 <span className="font-heading text-5xl sm:text-6xl font-extrabold text-[#5e6fb5]">
-                  50+
+                  10+
                 </span>
               </div>
               <div className="border-l-2 border-slate-200 pl-6">

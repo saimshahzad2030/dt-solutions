@@ -22,21 +22,21 @@ export interface PortfolioItem {
 
 export const portfolioData: PortfolioItem[] = [
   {
-    id: "epay-balochistan",
-    slug: "epay-balochistan",
-    title: "Building the ePay Balochistan Platform",
-    category: "Government Integrations",
+    id: "bpay-balochistan",
+    slug: "bpay-balochistan",
+    title: "Building the bpay Balochistan Platform",
+    category: "Institutional Integrations",
     badge: "Flagship Initiative",
-    client: "Government Provincial Department",
+    client: "Provincial Institutional Authority",
     coverage: "Multi-Department Provincial Scale",
     timeline: "2024 - Present (Active Development)",
     status: "In Development",
     featured: true,
-    shortDesc: "End-to-end provincial digital payment platform replacing manual cash counters with online and mobile payment channels at government scale.",
-    fullDesc: "DT Solutions is currently developing the ePay Balochistan digital payment platform, a high-impact government-commissioned initiative to replace manual cash-based counters and dispersed collections with a unified, scalable electronic payment infrastructure for the entire province.",
-    challenge: "Manual cash-based collections across provincial departments created severe administrative overhead, lack of real-time fiscal tracking, long queues for citizens at bank branches, and reconciliation delays spanning multiple weeks.",
-    approach: "Engineered an enterprise microservice architecture connecting provincial departments directly to the 1-Link national switch, enabling citizens to pay taxes, vehicle tokens, and departmental fees via mobile apps, internet banking, ATMs, and over-the-counter channels with instant verification.",
-    outcome: "Created a transparent, unified digital collection engine with sub-second payment callback processing, tamper-evident audit logs, and real-time treasury reconciliation dashboards for government executives.",
+    shortDesc: "End-to-end provincial digital payment platform replacing manual cash counters with online and mobile payment channels at provincial scale.",
+    fullDesc: "DT Solutions is developing the bpay Balochistan digital payment platform, a high-impact provincial digital transformation initiative designed to replace manual cash-based counters and dispersed collections with a unified, scalable electronic payment infrastructure.",
+    challenge: "Manual cash-based collections across provincial institutions created severe administrative overhead, lack of real-time fiscal tracking, long queues for citizens at payment centers, and reconciliation delays spanning multiple weeks.",
+    approach: "Engineered an enterprise microservice architecture connecting provincial institutions directly to the 1-Link national switch, enabling citizens to pay taxes, vehicle tokens, and institutional fees via mobile apps, internet banking, ATMs, and over-the-counter channels with instant verification.",
+    outcome: "Created a transparent, unified digital collection engine with sub-second payment callback processing, tamper-evident audit logs, and real-time treasury reconciliation dashboards for institutional leadership.",
     metrics: [
       { label: "Provincial Departments", value: "8+" },
       { label: "Target Transaction Capacity", value: "500K+/mo" },
@@ -55,20 +55,20 @@ export const portfolioData: PortfolioItem[] = [
     image: "/images/orbit-glass.jpg"
   },
   {
-    id: "government-digitization",
-    slug: "government-digitization",
-    title: "Public Sector Web Systems & Government Digitization",
-    category: "Government Integrations",
-    badge: "Public Sector",
-    client: "Provincial Authorities",
+    id: "institutional-digitization",
+    slug: "institutional-digitization",
+    title: "Institutional Web Systems & Digital Transformation",
+    category: "Institutional Integrations",
+    badge: "Institutional Solutions",
+    client: "Regional Institutions",
     coverage: "Multi-Agency",
     timeline: "Ongoing",
     status: "In Development",
     featured: true,
-    shortDesc: "Modernising public-sector operations via digital workflows, e-filing systems, and citizen service self-help portals.",
-    fullDesc: "A comprehensive public-sector digital modernization project designed to transition traditional paper-bound ministerial processes into structured, auditable digital workflows that accelerate processing times.",
-    challenge: "Legacy paper tracking and physical movement of files resulted in multi-week delays for citizen approvals, high document loss risk, and zero status visibility for senior officials.",
-    approach: "Designed a secure role-based web system with digital document tracking, automated notifications, e-signatures, and citizen verification dashboards.",
+    shortDesc: "Modernizing institutional operations through digital workflows, e-filing systems, and citizen self-service portals.",
+    fullDesc: "A comprehensive institutional digital modernization project designed to transition traditional paper-based administrative processes into structured, auditable digital workflows that accelerate processing times.",
+    challenge: "Legacy paper tracking and physical movement of files resulted in multi-week delays for service approvals, high document loss risk, and limited status visibility for senior officials.",
+    approach: "Designed a secure role-based web system with digital document tracking, automated notifications, e-signatures, and user verification dashboards.",
     outcome: "Streamlined inter-departmental communication, cut average file processing times by 65%, and established transparent accountability across departments.",
     metrics: [
       { label: "Processing Speedup", value: "65%" },
@@ -78,7 +78,7 @@ export const portfolioData: PortfolioItem[] = [
     keyDeliverables: [
       "E-filing and case tracking web application",
       "Role-based administrative dashboards for department heads",
-      "Citizen status verification and automated SMS/email alerts",
+      "User status verification and automated SMS/email alerts",
       "Tamper-proof audit logs and document versioning"
     ],
     techStack: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS", "Prisma"],
@@ -90,7 +90,7 @@ export const portfolioData: PortfolioItem[] = [
     title: "Secure Multi-Bank & Payment Switch Infrastructure",
     category: "Integrations",
     badge: "Financial Technology",
-    client: "Enterprise FinTech Client",
+    client: "Enterprise FinTech Organization",
     coverage: "Nationwide",
     timeline: "Completed",
     status: "Live Production",
@@ -138,7 +138,7 @@ export const portfolioData: PortfolioItem[] = [
     keyDeliverables: [
       "Custom KPI charts, trend analyses, and variance monitors",
       "Branch-level drill-down capabilities with granular RBAC permissions",
-      "Automated automated PDF executive summary generation",
+      "Automated PDF executive summary generation",
       "Data export in Excel, CSV, and secure API formats"
     ],
     techStack: ["Next.js", "React", "Recharts", "PostgreSQL", "Tailwind CSS"],
@@ -173,12 +173,15 @@ export const portfolioData: PortfolioItem[] = [
     ],
     techStack: ["Python", "FastAPI", "OpenAI API", "PostgreSQL", "Next.js"],
     image: "/images/orbit-glass.jpg"
-  }
+  },
+
+
+
 ];
 
 export const portfolioCategories = [
   "All",
-  "Government Integrations",
+  "Institutional Integrations",
   "Web Systems",
   "Integrations"
 ];

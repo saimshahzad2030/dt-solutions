@@ -46,7 +46,7 @@ export function FlagshipShowcase() {
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-white leading-tight">
             Active System Engagements: <br />
-            Building the ePay Balochistan Platform
+            Building the bpay Balochistan Platform
           </h2>
           <p className="text-slate-300 text-sm sm:text-base mt-4 leading-relaxed">
             A government-commissioned initiative to replace manual cash-based systems with a modern, scalable electronic payment infrastructure for the entire province.
@@ -103,7 +103,7 @@ export function FlagshipShowcase() {
 
               <div className="pt-2">
                 <Link
-                  href="/portfolio/epay-balochistan"
+                  href="/portfolio/bpay-balochistan"
                   className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-[#ee6196] to-[#f78da7] hover:from-[#e34682] hover:to-[#ee6196] text-white font-heading font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all"
                 >
                   <span>Explore Platform Architecture</span>

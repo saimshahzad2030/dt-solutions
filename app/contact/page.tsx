@@ -115,7 +115,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
+                  {/* <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-accent flex-shrink-0 shadow-sm">
                       <MapPin className="w-5 h-5" />
                     </div>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                         {companyData.location}
                       </span>
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-primary-light flex-shrink-0 shadow-sm">

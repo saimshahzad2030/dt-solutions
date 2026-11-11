@@ -45,7 +45,7 @@ export const testimonialsData: TestimonialItem[] = [
     name: "Kamran Siddiqui",
     role: "Head of Digital Initiatives",
     company: "Public Sector Program",
-    quote: "Developing ePay infrastructure requires intense regulatory attention and bulletproof security. DT Solutions demonstrated rigorous discipline, proactive problem-solving, and delivered rock-solid engineering.",
+    quote: "Developing bpay infrastructure requires intense regulatory attention and bulletproof security. DT Solutions demonstrated rigorous discipline, proactive problem-solving, and delivered rock-solid engineering.",
     rating: 5,
     avatarInitials: "KS",
     accentColor: "#5e6fb5",

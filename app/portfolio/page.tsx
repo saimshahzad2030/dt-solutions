@@ -9,7 +9,7 @@ import { ConsultationCta } from "@/components/home/ConsultationCta";
 export const metadata: Metadata = {
   title: "Portfolio & Case Studies | DT Solutions",
   description:
-    "Explore DT Solutions' enterprise case studies, including the flagship ePay Balochistan platform, government digitization, multi-bank switches, and workflow automations.",
+    "Explore DT Solutions' enterprise case studies, including the flagship bpay Balochistan platform, government digitization, multi-bank switches, and workflow automations.",
   alternates: {
     canonical: "https://dtsolutions.pk/portfolio",
   },

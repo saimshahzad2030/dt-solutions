@@ -31,11 +31,11 @@ export function AboutIntro() {
                 className="absolute -bottom-6 -right-4 sm:-right-8 bg-gradient-to-r from-[#ee6196] to-[#f78da7] p-6 rounded-3xl text-white shadow-xl max-w-[240px] text-center"
                 {...motionProps({ preset: "scale-in", delay: 300 })}
               >
-                <span className="font-heading text-4xl sm:text-5xl font-extrabold block leading-none">
+                {/* <span className="font-heading text-4xl sm:text-5xl font-extrabold block leading-none">
                   10+
-                </span>
+                </span> */}
                 <span className="font-heading text-xs font-bold uppercase tracking-wider block mt-1">
-                  Years of Combined Engineering Mastery
+                  Modern Engineering & Innovation
                 </span>
               </div>
             </div>

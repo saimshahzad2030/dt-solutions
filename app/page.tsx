@@ -36,14 +36,14 @@ export default function HomePage() {
       {/* 7. Experts With Experience Mosaic (4 Authentic Staggered Photos + 50+ Counter) */}
       <StatsCounter />
 
-      {/* 8. Active Engagement: ePay Balochistan Platform Showcase */}
+      {/* 8. Active Engagement: bpay Balochistan Platform Showcase */}
       <FlagshipShowcase />
 
       {/* 9. Testimonial & Technology Index Progress Bars */}
       <Testimonials />
 
       {/* 10. Partner / Client Brand SVGs Carousel */}
-      <BrandLogos />
+      {/* <BrandLogos /> */}
 
       {/* 11. Latest Blog Posts Grid */}
       <LatestBlog />

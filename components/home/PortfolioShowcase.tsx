@@ -3,25 +3,29 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Plus } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { portfolioData, portfolioCategories } from "@/data/portfolio";
 import { motionProps, staggerProps } from "@/components/motion";
+
 
 export function PortfolioShowcase() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const projectImages = [
-    { slug: "epay-balochistan", img: "/editech/project-1.jpg" },
+    { slug: "bpay-balochistan", img: "/editech/project-1.jpg" },
     { slug: "government-digitization", img: "/editech/project-2.jpg" },
     { slug: "multi-bank-fintech-switch", img: "/editech/project-3.jpg" },
     { slug: "enterprise-operations-portal", img: "/editech/project-1.jpg" },
     { slug: "ai-intake-automation", img: "/editech/project-2.jpg" },
   ];
-
   const filteredProjects =
-    selectedCategory === "All"
+    selectedCategory == "All"
       ? portfolioData
-      : portfolioData.filter((p) => p.category === selectedCategory);
+      : portfolioData.filter((p) => p.category == selectedCategory);
+  React.useEffect(() => {
+    console.log("Selected Category:", selectedCategory);
+    console.log("Filtered Projects:", filteredProjects);
+  }, [selectedCategory, filteredProjects])
 
   return (
     <section className="py-20 lg:py-28 bg-white relative overflow-hidden" id="portfolio">
@@ -47,7 +51,10 @@ export function PortfolioShowcase() {
               {portfolioCategories.map((cat) => (
                 <button
                   key={cat}
-                  onClick={() => setSelectedCategory(cat)}
+                  onClick={() => {
+
+                    setSelectedCategory(cat)
+                  }}
                   className={`px-4 py-1.5 rounded-full text-xs font-heading font-semibold uppercase tracking-wider transition-all ${selectedCategory === cat
                     ? "bg-[#5e6fb5] text-white shadow-sm"
                     : "bg-[#f8f9fc] text-slate-700 hover:text-[#5e6fb5]"
@@ -71,7 +78,7 @@ export function PortfolioShowcase() {
               <div
                 key={project.id}
                 className="group relative rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-white"
-                {...motionProps({ preset: "fade-up" })}
+              // {...motionProps({ preset: "zoom-out" })}
               >
                 {/* Image Container */}
                 <div className="relative h-[340px] w-full overflow-hidden">
