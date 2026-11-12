@@ -68,7 +68,7 @@ export function ConsultationCta() {
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-4">
+                    {/* <div className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-xl bg-[#ee6196] flex items-center justify-center text-white flex-shrink-0">
                         <MapPin className="w-5 h-5" />
                       </div>
@@ -80,7 +80,7 @@ export function ConsultationCta() {
                           {companyData.location}
                         </span>
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-xl bg-[#5e6fb5] flex items-center justify-center text-white flex-shrink-0">
