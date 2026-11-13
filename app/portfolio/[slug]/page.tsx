@@ -48,7 +48,7 @@ export default function SinglePortfolioPage({ params }: ProjectPageProps) {
   }
 
   const projectImages: Record<string, string> = {
-    "bpay-balochistan": "/editech/project-1.jpg",
+    "b-pay-balochistan": "/editech/project-1.jpg",
     "government-digitization": "/editech/project-2.jpg",
     "multi-bank-fintech-switch": "/editech/project-3.jpg",
     "enterprise-operations-portal": "/editech/project-1.jpg",

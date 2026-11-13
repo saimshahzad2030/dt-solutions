@@ -12,7 +12,7 @@ export function PortfolioShowcase() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const projectImages = [
-    { slug: "bpay-balochistan", img: "/editech/project-1.jpg" },
+    { slug: "b-pay-balochistan", img: "/editech/project-1.jpg" },
     { slug: "government-digitization", img: "/editech/project-2.jpg" },
     { slug: "multi-bank-fintech-switch", img: "/editech/project-3.jpg" },
     { slug: "enterprise-operations-portal", img: "/editech/project-1.jpg" },

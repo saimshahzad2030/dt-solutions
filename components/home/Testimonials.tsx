@@ -27,7 +27,7 @@ export function Testimonials() {
             </span>
 
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#121c32] leading-tight">
-              Trusted by Over 50+ Enterprises &amp; Leaders
+              Trusted by many Enterprises &amp; Leaders
             </h2>
 
             {/* Testimonial Box */}

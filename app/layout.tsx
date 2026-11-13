@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     "dashboards and portals",
     "DT Solutions",
     "dtsolutions.pk",
-    "bpay Balochistan",
+    "b-pay Balochistan",
     "Pakistan software house",
   ],
   authors: [{ name: companyData.legalName, url: "https://dtsolutions.pk" }],
