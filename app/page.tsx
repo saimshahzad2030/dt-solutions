@@ -36,7 +36,7 @@ export default function HomePage() {
       {/* 7. Experts With Experience Mosaic (4 Authentic Staggered Photos + 50+ Counter) */}
       <StatsCounter />
 
-      {/* 8. Active Engagement: b-pay Balochistan Platform Showcase */}
+      {/* 8. Active Engagement: B-Pay Balochistan Platform Showcase */}
       <FlagshipShowcase />
 
       {/* 9. Testimonial & Technology Index Progress Bars */}

@@ -68,7 +68,7 @@ export default function AboutPage() {
     {
       period: "Today",
       title: "A Trusted Long-Term Technical Partner",
-      desc: "We now architect mission-critical infrastructure — including provincial b-pay platforms and enterprise workflows — serving organizations with strict security and continuous uptime.",
+      desc: "We now architect mission-critical infrastructure — including provincial B-Pay platforms and enterprise workflows — serving organizations with strict security and continuous uptime.",
       img: "/editech/h1-banner03.jpg",
     },
   ];
