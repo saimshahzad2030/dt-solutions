@@ -74,11 +74,10 @@ export function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-40 w-full transition-colors duration-200 ${
-          scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-[0_4px_25px_rgba(7,19,43,0.08)] py-3.5"
-            : "bg-white py-3.5 border-b border-slate-100"
-        }`}
+        className={`sticky top-0 z-40 w-full transition-colors duration-200 ${scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-[0_4px_25px_rgba(7,19,43,0.08)] py-3.5"
+          : "bg-white py-3.5 border-b border-slate-100"
+          }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
@@ -90,7 +89,7 @@ export function Header() {
                 width={175}
                 height={46}
                 priority
-                className="h-9 sm:h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+                className="h-9 sm:h-16 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
               />
             </Link>
 
@@ -112,17 +111,15 @@ export function Header() {
                     >
                       <Link
                         href={link.href}
-                        className={`inline-flex items-center gap-1.5 px-3 py-2 text-[15px] font-heading font-semibold uppercase tracking-wide transition-colors ${
-                          isActive
-                            ? "text-[#5e6fb5]"
-                            : "text-[#212529] hover:text-[#5e6fb5]"
-                        }`}
+                        className={`inline-flex items-center gap-1.5 px-3 py-2 text-[15px] font-heading font-semibold uppercase tracking-wide transition-colors ${isActive
+                          ? "text-[#5e6fb5]"
+                          : "text-[#212529] hover:text-[#5e6fb5]"
+                          }`}
                       >
                         <span>{link.name}</span>
                         <ChevronDown
-                          className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                            servicesDropdown ? "rotate-180 text-[#5e6fb5]" : "text-slate-400"
-                          }`}
+                          className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesDropdown ? "rotate-180 text-[#5e6fb5]" : "text-slate-400"
+                            }`}
                         />
                       </Link>
 
@@ -179,11 +176,10 @@ export function Header() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`px-3 py-2 text-[15px] font-heading font-semibold uppercase tracking-wide transition-colors ${
-                      isActive
-                        ? "text-[#5e6fb5]"
-                        : "text-[#212529] hover:text-[#5e6fb5]"
-                    }`}
+                    className={`px-3 py-2 text-[15px] font-heading font-semibold uppercase tracking-wide transition-colors ${isActive
+                      ? "text-[#5e6fb5]"
+                      : "text-[#212529] hover:text-[#5e6fb5]"
+                      }`}
                   >
                     {link.name}
                   </Link>

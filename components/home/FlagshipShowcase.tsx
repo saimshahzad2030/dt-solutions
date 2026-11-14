@@ -29,12 +29,7 @@ export function FlagshipShowcase() {
       icon: BarChart3,
       title: "Revenue Dashboards & Reconciliation",
       desc: "Real-time dashboards for department heads to track collections and reconciliation, replacing manual end-of-day tallies.",
-    },
-    {
-      icon: Network,
-      title: "Secure Multi-Bank Integrations",
-      desc: "Integrating with 1-Link and commercial banking partners for reliable, auditable transaction processing at provincial scale.",
-    },
+    }
   ];
 
   return (

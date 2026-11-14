@@ -43,7 +43,7 @@ export default function HomePage() {
       <Testimonials />
 
       {/* 10. Partner / Client Brand SVGs Carousel */}
-      {/* <BrandLogos /> */}
+      <BrandLogos />
 
       {/* 11. Latest Blog Posts Grid */}
       <LatestBlog />

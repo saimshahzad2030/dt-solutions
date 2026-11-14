@@ -4,12 +4,11 @@ import { motionProps, staggerProps } from "@/components/motion";
 
 export function BrandLogos() {
   const brands = [
-    "/editech/brand-1.svg",
-    "/editech/brand-2.svg",
-    "/editech/brand-3.svg",
-    "/editech/brand-4.svg",
-    "/editech/brand-5.svg",
-    "/editech/brand-6.svg",
+    "/editech/brand-1.png",
+    "/editech/brand-2.jpeg",
+    "/editech/brand-3.jpeg",
+    "/editech/brand-4.jpeg",
+    "/editech/brand-5.jpeg",
   ];
 
   return (

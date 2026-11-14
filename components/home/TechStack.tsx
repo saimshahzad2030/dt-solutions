@@ -29,7 +29,7 @@ export function TechStack() {
       icon: Database,
     },
     {
-      name: "1-Link Switch & Banks",
+      name: "Switch & Banks",
       category: "Financial Switches",
       desc: "Direct integration with national payment switches and banking networks.",
       icon: ShieldCheck,

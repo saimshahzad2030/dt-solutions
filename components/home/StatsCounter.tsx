@@ -11,7 +11,6 @@ export function StatsCounter() {
   const points = [
     "Best Practices From Industry Experts",
     "Automated QA & Sub-Second Latency Architecture",
-    "Strict PCI-DSS & 1-Link Banking Compliance",
     "Dedicated Post-Launch SLA & Continuous Monitoring",
   ];
 
