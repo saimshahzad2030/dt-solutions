@@ -5,7 +5,7 @@ import { motionProps, staggerProps } from "@/components/motion";
 export function BrandLogos() {
   const brands = [
     "/editech/brand-1.png",
-    "/editech/brand-2.jpeg",
+    "/editech/brand-2.jpg",
     "/editech/brand-3.jpeg",
     "/editech/brand-4.jpeg",
     "/editech/brand-5.jpeg",
