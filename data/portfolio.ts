@@ -39,9 +39,9 @@ export const portfolioData: PortfolioItem[] = [
     outcome: "Created a transparent, unified digital collection engine with sub-second payment callback processing, tamper-evident audit logs, and real-time treasury reconciliation dashboards for institutional leadership.",
     metrics: [
       { label: "Provincial Departments", value: "8+" },
-      { label: "Target Transaction Capacity", value: "500K+/mo" },
-      { label: "Reconciliation Time", value: "Real-time" },
-      { label: "Citizen Wait Time", value: "Instant Digital" },
+      { label: "Digital Payment Access", value: "24/7" },
+      { label: "Digital Payment Tracking", value: "100%" },
+      { label: "Every Bill", value: "1 App" },
     ],
     keyDeliverables: [
       "Online citizen tax payment web portal and mobile responsive UI",

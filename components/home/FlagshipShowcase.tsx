@@ -83,16 +83,16 @@ export function FlagshipShowcase() {
                   <span className="text-[11px] text-slate-400 block mt-0.5">Departments</span>
                 </div>
                 <div className="p-3 bg-white/5 rounded-xl border border-white/5 text-center">
-                  <span className="font-heading text-2xl font-black text-[#ee6196] block">&lt;400ms</span>
-                  <span className="text-[11px] text-slate-400 block mt-0.5">Callback Speed</span>
+                  <span className="font-heading text-2xl font-black text-[#ee6196] block">24/7</span>
+                  <span className="text-[11px] text-slate-400 block mt-0.5">Digital Payment Access</span>
                 </div>
                 <div className="p-3 bg-white/5 rounded-xl border border-white/5 text-center">
                   <span className="font-heading text-2xl font-black text-emerald-400 block">100%</span>
-                  <span className="text-[11px] text-slate-400 block mt-0.5">Automated Recon</span>
+                  <span className="text-[11px] text-slate-400 block mt-0.5">Digital Payment Tracking</span>
                 </div>
                 <div className="p-3 bg-white/5 rounded-xl border border-white/5 text-center">
-                  <span className="font-heading text-2xl font-black text-[#5e6fb5] block">1-Link</span>
-                  <span className="text-[11px] text-slate-400 block mt-0.5">National Switch</span>
+                  <span className="font-heading text-2xl font-black text-[#5e6fb5] block">1 App</span>
+                  <span className="text-[11px] text-slate-400 block mt-0.5">Every Bill</span>
                 </div>
               </div>
 
