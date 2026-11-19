@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motionProps } from "@/components/motion";
 
 export function CtaStrip() {
@@ -10,10 +10,10 @@ export function CtaStrip() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div className="max-w-2xl" {...motionProps({ preset: "fade-up", delay: 50 })}>
             <span className="font-heading text-xs uppercase tracking-[0.2em] text-white/80 font-bold block mb-2">
-              Transform Your Systems
+              Enterprise &amp; Public-Sector Delivery
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-white leading-tight">
-              Ready to Upgrade Your Digital Infrastructure &amp; Workflows?
+              Planning a Digital Payment, Government, or Enterprise Platform?
             </h2>
           </div>
 
@@ -22,7 +22,7 @@ export function CtaStrip() {
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-[#5e6fb5] hover:bg-slate-50 font-heading font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl transition-all active:scale-95"
             >
-              <span>Get in Touch</span>
+              <span>Contact Our Team</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
 
@@ -30,7 +30,7 @@ export function CtaStrip() {
               href="/portfolio"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-2 border-white/40 hover:border-white text-white font-heading font-bold text-xs uppercase tracking-wider transition-all"
             >
-              <span>Explore Projects</span>
+              <span>Discover Our Projects</span>
             </Link>
           </div>
         </div>
@@ -38,4 +38,3 @@ export function CtaStrip() {
     </section>
   );
 }
-

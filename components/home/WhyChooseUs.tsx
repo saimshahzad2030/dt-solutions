@@ -1,34 +1,32 @@
-"use client";
-
 import React from "react";
-import { Layout, Cpu, Cloud, Compass, CheckCircle2 } from "lucide-react";
+import { Landmark, CreditCard, Layers, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { motionProps, staggerProps } from "@/components/motion";
 
 export function WhyChooseUs() {
-  const features = [
+  const pillars = [
     {
       num: "01",
-      icon: Layout,
-      title: "IT Design Project",
-      desc: "Design and propose intuitive user experiences and conversion structures through methodical research and iterative testing.",
+      icon: Landmark,
+      title: "Government Technology",
+      desc: "Digital challan, tax, and fee collection platforms paired with citizen self-service portals and departmental reporting consoles.",
     },
     {
       num: "02",
-      icon: Cpu,
-      title: "Product Engineer",
-      desc: "Develop and deploy scalable web architectures and role-based software engineered for high daily transaction volumes.",
+      icon: CreditCard,
+      title: "FinTech Infrastructure",
+      desc: "Payment gateway integrations, provincial payment switches, Raast, 1LINK, and 1BILL connectivity, and structured reconciliation.",
     },
     {
       num: "03",
-      icon: Cloud,
-      title: "Cloud & Switch Integration",
-      desc: "Seamless connectivity with national financial switches (1-Link), banking APIs, and cloud services with automated reconciliation.",
+      icon: Layers,
+      title: "Enterprise Solutions",
+      desc: "Role-based ERP and CRM systems, business intelligence dashboards, workflow automation, and scalable web and mobile platforms.",
     },
     {
       num: "04",
-      icon: Compass,
-      title: "IT Consultancy & SLA",
-      desc: "Provide strategic technical roadmaps, transparent scoping, and dependable post-launch maintenance with 24/7 SLA.",
+      icon: ShieldCheck,
+      title: "Security & Infrastructure",
+      desc: "Encryption, access control, audit logging, secure API design, cloud resilience, and PCI DSS readiness engineering.",
     },
   ];
 
@@ -37,18 +35,18 @@ export function WhyChooseUs() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16" {...motionProps({ preset: "fade-up", delay: 50 })}>
           <span className="font-heading text-xs sm:text-sm font-bold tracking-[0.2em] text-[#ee6196] uppercase block mb-3">
-            WHY CHOOSE US
+            CORE FOCUS AREAS
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#121c32] leading-tight">
-            How DT Solutions Helps Your Business <br />
-            Grow And Succeed
+            Where DT Solutions Delivers <br />
+            Measurable Institutional Value
           </h2>
         </div>
 
-        {/* 4 Feature Columns */}
+        {/* 4 Focus Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" {...staggerProps({ delay: 60, step: 80 })}>
-          {features.map((feat, idx) => {
-            const Icon = feat.icon;
+          {pillars.map((pillar, idx) => {
+            const Icon = pillar.icon;
             return (
               <div
                 key={idx}
@@ -56,28 +54,27 @@ export function WhyChooseUs() {
                 {...motionProps({ preset: "fade-up" })}
               >
                 <div>
-                  {/* Top Number & Icon */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="w-14 h-14 rounded-2xl bg-[#5e6fb5]/10 text-[#5e6fb5] flex items-center justify-center group-hover:bg-[#ee6196] group-hover:text-white transition-colors duration-300">
                       <Icon className="w-7 h-7" />
                     </div>
                     <span className="font-heading text-3xl font-extrabold text-slate-200 group-hover:text-[#ee6196]/20 transition-colors">
-                      {feat.num}
+                      {pillar.num}
                     </span>
                   </div>
 
                   <h3 className="font-heading text-xl font-bold text-[#121c32] group-hover:text-[#5e6fb5] transition-colors mb-3">
-                    {feat.title}
+                    {pillar.title}
                   </h3>
 
                   <p className="text-muted text-xs sm:text-sm leading-relaxed">
-                    {feat.desc}
+                    {pillar.desc}
                   </p>
                 </div>
 
                 <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-400">
-                  <span>Pillar {feat.num}</span>
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                  <span>Focus {pillar.num}</span>
+                  <CheckCircle2 className="w-4 h-4 text-[#5e6fb5]" />
                 </div>
               </div>
             );

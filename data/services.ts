@@ -7,7 +7,9 @@ export interface ServiceItem {
   fullDesc: string;
   iconName: string;
   badge: string;
+  image: string;
   targetAudience: string;
+  capabilities: string[];
   deliverables: string[];
   outcomes: string[];
   features: string[];
@@ -17,269 +19,269 @@ export interface ServiceItem {
 
 export const servicesData: ServiceItem[] = [
   {
-    id: "service-1",
-    slug: "web-design-development",
+    id: "vertical-1",
+    slug: "government-digital-transformation",
     number: "01",
-    title: "Web Design & Development",
-    shortDesc: "Business websites that present services clearly, strengthen credibility, and make it easy for customers to act.",
-    fullDesc: "We build websites and landing pages that match how global enterprises look for services — clear page hierarchies, straightforward contact paths, high performance, and easy editing for your team.",
-    iconName: "Layout",
-    badge: "Enterprise Web",
-    targetAudience: "SMEs, service firms, consultants, and founders who need a sharper digital presence and higher-converting web channels.",
+    title: "Government Digital Transformation",
+    shortDesc:
+      "Public-sector revenue collection platforms, e-government applications, digital challan management, and citizen self-service portals.",
+    fullDesc:
+      "DT Solutions designs and engineers digital transformation platforms for provincial and public-sector institutions. We replace manual counter dependencies and paper-heavy processes with structured e-government applications, digital challan and levy systems, citizen portals, and unified revenue management platforms.",
+    iconName: "Landmark",
+    badge: "Government Technology",
+    image: "/editech/11.jpg",
+    targetAudience:
+      "Provincial ministries, public authorities, municipal departments, and government agencies modernising tax, fee, levy, and citizen service delivery.",
+    capabilities: [
+      "Government tax and fee collection platforms",
+      "E-Government applications",
+      "Digital challan and levy management",
+      "Citizen portals and self-service applications",
+      "Government revenue management systems",
+    ],
     deliverables: [
-      "Design templates and mobile-first responsive pages",
-      "Next.js or CMS implementation with simple editing workflows",
-      "Comprehensive on-page technical SEO and Core Web Vitals optimization",
-      "Contact forms, CRM webhooks, analytics, and handover documentation"
+      "Digital tax, fee, levy, and challan generation and collection modules",
+      "Citizen-facing web portals and mobile self-service applications",
+      "Departmental integration adapters and unified administrative consoles",
+      "Revenue tracking, treasury reporting, and reconciliation dashboards",
     ],
     outcomes: [
-      "Clearer presentation of services, capabilities, and pricing",
-      "Higher-quality inbound enquiries that save sales team time",
-      "Simple content updates anyone on your team can execute without developers"
+      "Transparent, auditable digital alternatives to manual cash counters",
+      "Improved convenience for citizens accessing public-sector services online",
+      "Structured departmental reporting and consolidated revenue visibility",
     ],
     features: [
-      "Lightning-fast server rendering and static site generation",
-      "Custom responsive design tailored to corporate identity",
-      "Micro-animations, smooth hover states, and interactive UI components",
-      "Structured schema markup and meta tags for peak search rankings",
-      "Accessibility (WCAG 2.1) compliance and cross-browser testing"
+      "Multi-department onboarding architecture with strict institutional isolation",
+      "Granular role-based access control (RBAC) for departmental officers and auditors",
+      "Tamper-evident audit trails and verifiable digital payment receipts",
+      "Integration readiness with national payment rails and licensed payment gateways",
+      "Accessible, mobile-responsive interfaces engineered for broad citizen reach",
     ],
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
+    technologies: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "REST APIs", "Docker"],
     faqs: [
       {
-        question: "How long does a typical corporate website redesign take?",
-        answer: "A standard corporate website project usually takes between 3 to 6 weeks from initial discovery and design to final QA, performance tuning, and launch."
+        question: "How does DT Solutions approach multi-department government integrations?",
+        answer:
+          "We design modular integration layers with standardised API contracts so individual departments—such as excise, revenue, or transport—can onboard in structured phases without disrupting existing operations.",
       },
       {
-        question: "Can our internal marketing team update content after launch?",
-        answer: "Yes. We configure intuitive CMS or structured content modules so non-technical team members can easily edit text, publish blog posts, and update service listings."
+        question: "Can citizen portals support both web and mobile access?",
+        answer:
+          "Yes. Our public-sector platforms are engineered with responsive web portals and companion mobile applications so citizens can generate challans, track status, and complete payments across devices.",
       },
-      {
-        question: "How do you ensure fast page speeds and high Lighthouse scores?",
-        answer: "We use Next.js App Router with server-side rendering, next/image automatic WebP/AVIF compression, font preloading, and minimal JavaScript overhead to consistently score 95+ on Google Lighthouse."
-      }
-    ]
+    ],
   },
   {
-    id: "service-2",
-    slug: "custom-software-development",
+    id: "vertical-2",
+    slug: "fintech-payment-infrastructure",
     number: "02",
-    title: "Custom Software Development",
-    shortDesc: "Internal tools, operational web apps, and management systems that eliminate spreadsheet chaos and coordinate teams.",
-    fullDesc: "We deliver web applications for approvals, order processing, inventory notes, and other routine operations so teams stop relying on fragmented email chains and fragile spreadsheets.",
-    iconName: "Code2",
-    badge: "Custom Systems",
-    targetAudience: "Growing enterprises whose operational workflows have outgrown off-the-shelf tools, email inboxes, or shared spreadsheets.",
-    deliverables: [
-      "Discovery sessions and practical requirements mapping",
-      "Role-based secure web applications and admin interfaces",
-      "Workflow automation, approval routing, and reporting modules",
-      "Production deployment, automated backups, staff training, and handover documentation"
-    ],
-    outcomes: [
-      "Fewer repetitive tasks and fewer missed operational actions",
-      "Reliable real-time operational visibility for managers and executives",
-      "Software tailored specifically to your daily workflow rather than forced compromises"
-    ],
-    features: [
-      "Role-based access control (RBAC) with granular permissions",
-      "Auditable action logging and tamper-evident revision history",
-      "Responsive web consoles optimized for desktop, tablet, and mobile field access",
-      "Relational database architecture built for high data integrity",
-      "REST & GraphQL APIs for seamless internal system interoperability"
-    ],
-    technologies: ["Node.js", "TypeScript", "PostgreSQL", "React", "Prisma", "Docker", "Tailwind CSS"],
-    faqs: [
-      {
-        question: "When should a business invest in custom software versus SaaS?",
-        answer: "Custom software becomes essential when your core operational processes provide a competitive edge, when subscription costs for multiple tools spiral, or when off-the-shelf SaaS cannot accommodate your unique compliance and approval rules."
-      },
-      {
-        question: "Who owns the intellectual property and source code?",
-        answer: "You do. 100% of the custom source code, documentation, and database assets belong entirely to your company upon project completion."
-      }
-    ]
-  },
-  {
-    id: "service-3",
-    slug: "ai-automation-workflows",
-    number: "03",
-    title: "AI Automation & Workflows",
-    shortDesc: "Automations that eliminate repetitive administrative tasks and triage workflows while maintaining human oversight.",
-    fullDesc: "We map routine processes — from customer enquiry intake to data categorization, document processing, and internal notifications — then automate the parts that save time while keeping human checks where they matter.",
-    iconName: "Bot",
-    badge: "Intelligent Ops",
-    targetAudience: "Teams managing high-volume enquiries, document reviews, employee onboarding, invoice processing, or cross-department handoffs.",
-    deliverables: [
-      "Comprehensive workflow mapping and sensible automation architecture",
-      "Intelligent text extraction, classification, and summarization pipelines",
-      "API, email, CRM, and internal database connector integration",
-      "Real-time monitoring, threshold alerts, and safe human-in-the-loop fallback paths"
-    ],
-    outcomes: [
-      "Up to 80% faster turnaround time on routine customer and internal requests",
-      "Drastic reduction in hours spent on manual data re-entry and filing",
-      "Consistent, auditable handling of repetitive cases without fatigue errors"
-    ],
-    features: [
-      "LLM integration with strict safety boundaries and prompt grounding",
-      "Automated document OCR and structured JSON extraction",
-      "Multi-step conditional logic with human approval triggers",
-      "Integration with Slack, WhatsApp, email, and ERP databases",
-      "Self-healing workflows with automated retry mechanisms and dead-letter queues"
-    ],
-    technologies: ["Python", "OpenAI / Claude API", "LangChain", "Node.js", "Zapier / Make", "PostgreSQL"],
-    faqs: [
-      {
-        question: "How do you prevent AI hallucinations in business workflows?",
-        answer: "We employ deterministic business logic for core calculations and use AI strictly for constrained extraction, summarization, and classification. Any critical decision requires explicit human-in-the-loop sign-off."
-      },
-      {
-        question: "Will our proprietary business data be shared with public AI models?",
-        answer: "No. We utilize enterprise API agreements with zero-data-retention policies or host private on-premise models to ensure your proprietary business records remain strictly confidential."
-      }
-    ]
-  },
-  {
-    id: "service-4",
-    slug: "business-dashboards-portals",
-    number: "04",
-    title: "Business Dashboards & Portals",
-    shortDesc: "Unified executive dashboards and customer portals that deliver clarity on key metrics without hunting across tools.",
-    fullDesc: "We turn fragmented, siloed data into focused, real-time dashboards and portals so business leaders and department heads can inspect performance instantly and make evidence-based decisions.",
-    iconName: "LineChart",
-    badge: "Executive Insights",
-    targetAudience: "Leadership teams, financial controllers, and operational managers who need dependable figures without chasing weekly manual status spreadsheets.",
-    deliverables: [
-      "Executive KPI dashboards and operational department consoles",
-      "Customer or vendor self-service portals with secure authenticated access",
-      "Custom metric calculations, dynamic filtering, and one-click PDF/CSV export",
-      "Automated scheduled data synchronization and granular team permissions"
-    ],
-    outcomes: [
-      "Faster, high-conviction decision-making backed by real-time numbers",
-      "Elimination of hours spent compiling manual weekly reports across departments",
-      "Transparent customer experience through dedicated self-service portals"
-    ],
-    features: [
-      "Interactive data visualizations with drill-down capabilities",
-      "Real-time WebSocket data updates for live operations monitoring",
-      "Role-segmented viewing permissions ensuring each stakeholder sees only relevant figures",
-      "Optimized SQL indexing for instant aggregation across millions of records"
-    ],
-    technologies: ["Next.js", "React", "Recharts", "Tremor", "PostgreSQL", "ClickHouse", "Tailwind CSS"],
-    faqs: [
-      {
-        question: "Can the dashboard pull data from different disconnected software?",
-        answer: "Yes. We build data adapters that unify information from your accounting software, CRM, payment processors, and proprietary databases into a coherent single source of truth."
-      }
-    ]
-  },
-  {
-    id: "service-5",
-    slug: "api-integrations",
-    number: "05",
-    title: "API Integrations",
-    shortDesc: "Reliable synchronization pipelines connecting CRMs, ERPs, logistics partners, and internal systems without double data entry.",
-    fullDesc: "We connect CRMs, payment gateways, courier/shipping partners, and legacy internal software so critical business records flow smoothly across platforms without manual copy-paste or fragile spreadsheet syncing.",
-    iconName: "Network",
-    badge: "System Sync",
-    targetAudience: "Enterprises juggling multiple software platforms and struggling with duplicate entries, reconciliation mismatches, and delayed updates.",
-    deliverables: [
-      "Integration architecture design and bidirectional data schema mapping",
-      "Custom middleware adapters and third-party connector pipelines",
-      "Webhook listeners, event queues, and automated synchronization monitors",
-      "Comprehensive error logging, retry policies, and alert mechanisms"
-    ],
-    outcomes: [
-      "Zero data mismatches and drastic reduction in manual data entry corrections",
-      "Instant real-time handoffs between customer-facing apps and backend fulfillment",
-      "Substantial time saved across accounting, sales, and logistics teams"
-    ],
-    features: [
-      "Robust webhook security with cryptographic signature verification",
-      "Idempotent processing preventing duplicate order or invoice creations",
-      "Rate-limit handling with exponential backoff and message queues",
-      "Comprehensive health check endpoints and visual uptime monitoring"
-    ],
-    technologies: ["REST", "GraphQL", "Webhooks", "Node.js", "Redis", "RabbitMQ", "AWS Lambda"],
-    faqs: [
-      {
-        question: "What happens if a third-party API goes down or changes its endpoints?",
-        answer: "Our integration architecture incorporates durable message queues (like Redis/RabbitMQ) with exponential retry policies. If an external service experiences downtime, messages are securely buffered and retried automatically once the service restores."
-      }
-    ]
-  },
-  {
-    id: "service-6",
-    slug: "payment-gateway-integrations",
-    number: "06",
-    title: "Payment Gateway Integrations",
-    shortDesc: "Seamless digital payment collection via 1-Link, JazzCash, Easypaisa, Stripe, and banking switches with automated reconciliation.",
-    fullDesc: "We connect local and international payment gateways to your application, manage secure payment callbacks, and engineer automated logging so your accounting team can reconcile digital collections with 100% confidence.",
+    title: "FinTech & Payment Infrastructure",
+    shortDesc:
+      "Payment gateway integrations, provincial payment switches, Raast, 1LINK and 1BILL connectivity, bank and wallet rails, and reconciliation systems.",
+    fullDesc:
+      "We engineer reliable payment infrastructure and financial integration layers for government initiatives, financial institutions, and high-volume enterprises. Our work spans payment gateway integration, provincial payment switch engineering, Raast, 1LINK and 1BILL connectivity, bank and digital wallet integrations, and automated settlement reconciliation.",
     iconName: "CreditCard",
-    badge: "FinTech & Payments",
-    targetAudience: "Organizations selling online, collecting fees/deposits, collecting recurring subscriptions, or handling provincial government tax collections.",
+    badge: "FinTech Infrastructure",
+    image: "/editech/12.jpg",
+    targetAudience:
+      "Government collection programs, financial institutions, payment aggregators, utilities, and commercial enterprises managing multi-channel digital collections.",
+    capabilities: [
+      "Payment gateway integration",
+      "Provincial payment switches",
+      "Raast, 1LINK and 1BILL integration",
+      "Digital payment collection",
+      "Bank and wallet integrations",
+      "Transaction reconciliation and settlement systems",
+    ],
     deliverables: [
-      "Checkout and payment flow user experience optimization",
-      "Integration with 1-Link, JazzCash, Easypaisa, Stripe, and direct bank switches",
-      "Encrypted callback verification, webhooks, and auditable transaction ledgers",
-      "Instant digital receipts, customer notifications, and automated reconciliation exports"
+      "Payment gateway and multi-channel collection integration middleware",
+      "Raast, 1LINK, 1BILL, commercial bank, and digital wallet connectors",
+      "Encrypted callback verification, webhook processing, and idempotent transaction ledgers",
+      "Automated transaction tracking, settlement matching, and finance reconciliation exports",
     ],
     outcomes: [
-      "Lower checkout drop-off rates and clear, unalterable digital audit trails",
-      "Immediate automated confirmation of customer orders and paid service invoices",
-      "Elimination of manual bank statement reconciliations for accounting teams"
+      "Unified multi-channel payment acceptance across banking and wallet rails",
+      "Clear, auditable transaction ledgers that simplify accounting reconciliation",
+      "Structured separation between platform application logic and payment gateway processing",
     ],
     features: [
-      "Hosted checkout, embedded iFrames, and dynamic QR payment flows",
-      "PCI-DSS compliant handling with zero storage of sensitive card details",
-      "Automated callback verification preventing fraudulent transaction approvals",
-      "Multi-currency processing and real-time exchange rate conversion",
-      "Automated dispute handling and instant refund processing triggers"
+      "Idempotent transaction processing to guard against duplicate postings",
+      "Cryptographic callback and webhook signature verification",
+      "Structured settlement matching and exception reporting for finance teams",
+      "Support for over-the-counter, internet banking, mobile wallet, and QR collection flows",
+      "PCI DSS readiness engineering and strict data minimisation practices",
     ],
-    technologies: ["1-Link Switch", "JazzCash", "Easypaisa", "Stripe", "Bank APIs", "Next.js", "Node.js"],
+    technologies: ["Node.js", "TypeScript", "PostgreSQL", "Redis", "Raast / 1LINK / 1BILL", "REST APIs"],
     faqs: [
       {
-        question: "Can you integrate both Pakistani local payment gateways and international gateways?",
-        answer: "Yes! We specialize in local integrations (1-Link, JazzCash, Easypaisa, Kuickpay, Bank APIs) as well as global payment networks (Stripe, PayPal, Checkout.com) in unified checkout flows."
-      }
-    ]
+        question: "Which national and commercial payment rails can DT Solutions integrate?",
+        answer:
+          "We engineer integrations for Raast, 1LINK, 1BILL, licensed payment gateways (including consortium delivery alongside PayFast), commercial bank APIs, and digital wallets according to project licensing and operational agreements.",
+      },
+      {
+        question: "How is transaction reconciliation handled across multiple payment channels?",
+        answer:
+          "Our platforms maintain structured transaction ledgers that match payment callbacks against gateway settlement reports, surfacing exceptions clearly for finance and audit teams.",
+      },
+    ],
   },
   {
-    id: "service-7",
-    slug: "maintenance-support",
-    number: "07",
-    title: "Maintenance & Support",
-    shortDesc: "Ongoing performance audits, security patches, uptime monitoring, and continuous enhancements so your systems stay dependable.",
-    fullDesc: "After launch, our dedicated engineering team handles bug fixes, proactive security patches, performance audits, and iterative improvements so your systems scale smoothly as user adoption grows.",
-    iconName: "ShieldAlert",
-    badge: "24/7 SLA Support",
-    targetAudience: "Enterprises that require dependable ongoing engineering support rather than relying on inconsistent freelancer availability for critical systems.",
+    id: "vertical-3",
+    slug: "enterprise-software-solutions",
+    number: "03",
+    title: "Enterprise Software Solutions",
+    shortDesc:
+      "ERP and CRM systems, workflow and process automation, business intelligence dashboards, enterprise portals, and custom software development.",
+    fullDesc:
+      "We build dependable internal software tailored to complex organisational operations. From ERP and CRM modules to workflow and process automation (including targeted AI-assisted workflows as a supporting capability), business intelligence dashboards, and enterprise portals, our software eliminates fragmented spreadsheets and strengthens operational visibility.",
+    iconName: "Code2",
+    badge: "Enterprise Solutions",
+    image: "/editech/13.jpg",
+    targetAudience:
+      "Mid-market and large enterprises, logistics groups, service organisations, and multi-branch institutions streamlining core internal operations.",
+    capabilities: [
+      "ERP and CRM systems",
+      "Workflow and process automation",
+      "Business intelligence dashboards",
+      "Enterprise portals",
+      "Custom software development",
+    ],
     deliverables: [
-      "Rapid bug resolution and scheduled minor improvement sprint cycles",
-      "24/7 server uptime, SSL, firewall, and database performance monitoring",
-      "Regular package dependency upgrades and zero-day security patching",
-      "Monthly performance reports, database optimization, and strategic technical advice"
+      "Role-based ERP, CRM, approval, and operational management web applications",
+      "Structured workflow and process automation pipelines with human oversight",
+      "Executive business intelligence dashboards and operational reporting modules",
+      "System deployment, technical documentation, and team onboarding",
     ],
     outcomes: [
-      "Maximized uptime with 99.9% availability SLAs on mission-critical applications",
-      "Peace of mind knowing a seasoned engineering team is on standby 24/7",
-      "Predictable maintenance costs with zero surprise operational interruptions"
+      "Unified operational data replacing disconnected spreadsheets and email chains",
+      "Clearer management visibility into departmental performance and bottlenecks",
+      "Software shaped around actual governance rules rather than rigid workarounds",
     ],
     features: [
-      "Automated daily encrypted offsite backups with rapid disaster recovery",
-      "Real-time error tracking with Sentry and instant engineering alerts",
-      "Proactive server load balancing and CDN cache warming",
-      "Dedicated Slack/WhatsApp support channel with priority SLA response"
+      "Role-based access control (RBAC) aligned with departmental hierarchies",
+      "Auditable approval workflows and full change history logging",
+      "Interactive BI reporting with filtering and structured CSV/PDF exports",
+      "Supporting workflow automation and intelligent document triage where appropriate",
+      "Clean API interfaces for connecting existing accounting and operational tools",
     ],
-    technologies: ["Docker", "AWS CloudWatch", "Sentry", "GitHub Actions", "Vercel", "Linux", "Nginx"],
+    technologies: ["Next.js", "React", "TypeScript", "Node.js", "Python", "PostgreSQL"],
     faqs: [
       {
-        question: "What is your response time for high-severity emergency issues?",
-        answer: "For critical production outages, our emergency response SLA guarantees active engineering attention within 30 minutes to 1 hour, supported 24/7."
-      }
-    ]
-  }
+        question: "Can DT Solutions integrate custom enterprise software with our existing ERP or accounting tools?",
+        answer:
+          "Yes. We design clean API middleware and data synchronisation adapters so new operational portals and BI dashboards work seamlessly alongside your existing systems.",
+      },
+      {
+        question: "Who retains ownership of custom-built software?",
+        answer:
+          "Intellectual property and source code ownership terms are defined clearly in each client agreement, with full handover documentation provided upon delivery.",
+      },
+    ],
+  },
+  {
+    id: "vertical-4",
+    slug: "digital-platforms-applications",
+    number: "04",
+    title: "Digital Platforms & Applications",
+    shortDesc:
+      "Mobile and web application development, white-label digital platforms, customer engagement platforms, and loyalty and rewards solutions.",
+    fullDesc:
+      "We architect and deliver modern customer-facing digital products built for usability, scale, and brand consistency. Our capabilities cover mobile application development, enterprise web applications, white-label digital platforms, customer engagement ecosystems, and loyalty and rewards solutions.",
+    iconName: "Smartphone",
+    badge: "Digital Platforms",
+    image: "/editech/14.jpg",
+    targetAudience:
+      "Enterprises, financial institutions, consumer brands, and public-service programmes launching scalable mobile, web, and white-label digital channels.",
+    capabilities: [
+      "Mobile application development",
+      "Web application development",
+      "White-label digital platforms",
+      "Customer engagement platforms",
+      "Loyalty and rewards solutions",
+    ],
+    deliverables: [
+      "Cross-platform and native mobile applications with responsive companion web portals",
+      "Configurable white-label platform architectures supporting multi-tenant branding",
+      "Customer engagement, notification, and loyalty/rewards management modules",
+      "Performance-optimised corporate web applications and digital self-service journeys",
+    ],
+    outcomes: [
+      "Consistent, intuitive user experiences across mobile and web touchpoints",
+      "Faster time-to-market for multi-brand or partner-deployed white-label products",
+      "Stronger digital adoption and sustained customer engagement",
+    ],
+    features: [
+      "Modular front-end and API architecture designed for multi-channel reuse",
+      "Clean responsive interfaces built for desktop, tablet, and mobile accessibility",
+      "Structured onboarding, profile management, and transactional history views",
+      "Configurable engagement rules, digital notifications, and rewards tracking",
+      "Supporting corporate web development and technical SEO engineering",
+    ],
+    technologies: ["React", "Next.js", "React Native / Flutter", "TypeScript", "Tailwind CSS", "Node.js"],
+    faqs: [
+      {
+        question: "What is included in a white-label digital platform build?",
+        answer:
+          "We architect configurable multi-tenant platforms where branding, workflows, feature flags, and partner integrations can be tailored per deployment without duplicating the core codebase.",
+      },
+      {
+        question: "Do you handle both mobile apps and the supporting backend APIs?",
+        answer:
+          "Yes. We deliver end-to-end digital platforms including mobile clients, web administration panels, backend APIs, database architecture, and third-party integrations.",
+      },
+    ],
+  },
+  {
+    id: "vertical-5",
+    slug: "technology-infrastructure-security",
+    number: "05",
+    title: "Technology Infrastructure & Security",
+    shortDesc:
+      "API development and integration, cloud infrastructure, cybersecurity implementation, PCI DSS readiness engineering, and system monitoring.",
+    fullDesc:
+      "Mission-critical government and financial platforms demand resilient foundations. DT Solutions delivers API engineering, cloud infrastructure architecture, cybersecurity implementation, PCI DSS readiness and security engineering, and structured system monitoring and maintenance.",
+    iconName: "ShieldCheck",
+    badge: "Infrastructure & Security",
+    image: "/editech/15.jpg",
+    targetAudience:
+      "Government bodies, FinTech operators, and enterprise IT leaders strengthening system resilience, API interoperability, and security posture.",
+    capabilities: [
+      "API development and integration",
+      "Cloud infrastructure",
+      "Cybersecurity implementation",
+      "PCI DSS readiness and security engineering",
+      "System monitoring and maintenance",
+    ],
+    deliverables: [
+      "Secure REST/GraphQL API gateways, middleware adapters, and webhook pipelines",
+      "Containerised cloud infrastructure, automated backup strategies, and disaster recovery plans",
+      "Security hardening covering encryption, access controls, audit trails, and vulnerability remediation",
+      "PCI DSS readiness engineering support and ongoing application monitoring and maintenance",
+    ],
+    outcomes: [
+      "Dependable interoperability between internal databases, banking rails, and partner systems",
+      "Stronger security posture built on defence-in-depth engineering practices",
+      "Proactive observability and structured maintenance reducing operational risk",
+    ],
+    features: [
+      "Encryption in transit (TLS) and at rest alongside strict secrets management",
+      "Granular role-based access control (RBAC) and immutable security audit trails",
+      "PCI DSS readiness engineering (architecture hardening without claiming formal certification)",
+      "Containerised CI/CD pipelines, health monitoring, and structured incident response workflows",
+      "Scheduled dependency patching, database tuning, and backup verification",
+    ],
+    technologies: ["Docker", "Cloud Infrastructure", "Nginx", "PostgreSQL", "Redis", "CI/CD Pipelines"],
+    faqs: [
+      {
+        question: "What does PCI DSS readiness and security engineering involve?",
+        answer:
+          "We design and harden platform architectures in alignment with PCI DSS security engineering principles—including network segmentation, data minimisation, access controls, encryption, and audit logging—to prepare systems for formal third-party assessment where required.",
+      },
+      {
+        question: "Do you provide ongoing system monitoring and post-launch maintenance?",
+        answer:
+          "Yes. We offer structured maintenance engagements covering security updates, monitoring, backup verification, performance reviews, and iterative enhancements tailored to each client agreement.",
+      },
+    ],
+  },
 ];
-

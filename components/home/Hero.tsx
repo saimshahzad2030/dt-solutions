@@ -5,22 +5,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { motionProps } from "@/components/motion";
+import { focusAreas } from "@/data/company";
 
 export function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
     {
-      subtitle: "GROWTH YOUR BUSINESS",
-      titlePart1: "From Idea to",
-      titlePart2: "Products",
+      subtitle: "TECHNOLOGY & DIGITAL TRANSFORMATION",
+      titlePart1: "Powering Digital Transformation",
+      titlePart2: "Through Technology & Innovation",
       description:
-        "Get professional & reliable research-oriented solutions for Enterprise Software, Provincial Payment Switches, and Business Automation needs.",
-      buttonText: "Get Started",
-      buttonLink: "/contact",
-      secondaryText: "Explore Services",
-      secondaryLink: "/services",
-      mainImage: "/editech/slider-h1-1.png",
+        "DT Solutions delivers enterprise technology, digital payment infrastructure and government transformation platforms that simplify complex operations and enable scalable digital services.",
+      buttonText: "Explore Our Solutions",
+      buttonLink: "/services",
+      secondaryText: "Discover Our Projects",
+      secondaryLink: "/portfolio",
+      mainImage: "/editech/16.png",
       shapes: [
         { src: "/editech/slider-h1-shape-1.png", className: "absolute -top-6 left-4 w-16 h-16 animate-float-slow opacity-90 z-10" },
         { src: "/editech/slider-h1-shape-2.png", className: "absolute bottom-10 left-0 w-20 h-20 animate-float-slow [animation-delay:1.5s] opacity-90 z-10" },
@@ -28,16 +29,16 @@ export function Hero() {
       ],
     },
     {
-      subtitle: "ENTERPRISE TRANSFORMATION",
-      titlePart1: "Digital Systems",
-      titlePart2: "Built to Scale",
+      subtitle: "FLAGSHIP PROVINCIAL PLATFORM",
+      titlePart1: "B-Pay – Government of",
+      titlePart2: "Balochistan",
       description:
-        "Architecting robust high-throughput financial switches, executive dashboards, and AI automation for global enterprises with 24/7 dedicated support.",
-      buttonText: "Start a Project",
-      buttonLink: "/contact",
-      secondaryText: "Our Case Studies",
-      secondaryLink: "/portfolio",
-      mainImage: "/editech/slider-h1-2.png",
+        "DT Solutions, in collaboration with PayFast, is delivering B-Pay, a digital payment platform designed to transform the collection of government taxes, fees, levies, challans and other public-sector payments across Balochistan.",
+      buttonText: "Explore B-Pay",
+      buttonLink: "/portfolio/B-Pay-balochistan",
+      secondaryText: "Technology & Security",
+      secondaryLink: "/technology-security",
+      mainImage: "/editech/17.png",
       shapes: [
         { src: "/editech/slider-h1-shape-4.png", className: "absolute top-8 left-12 w-20 h-20 animate-float-slow opacity-90 z-10" },
         { src: "/editech/slider-h1-shape-5.png", className: "absolute bottom-12 right-8 w-24 h-24 animate-float-slow [animation-delay:2s] opacity-90 z-10" },
@@ -57,7 +58,7 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden min-h-[640px] lg:min-h-[720px] flex items-center bg-[#fdfdfd]">
-      {/* Authentic Editech Slider Background Image */}
+      {/* Preserved Slider Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/editech/slider-h1-bg-1.jpg"
@@ -66,7 +67,6 @@ export function Hero() {
           priority
           className="object-cover object-center"
         />
-        {/* Soft light overlay without expensive full-screen backdrop-filter */}
         <div className="absolute inset-0 bg-white/40" />
       </div>
 
@@ -74,16 +74,14 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Text Column */}
           <div className="lg:col-span-6 space-y-6 text-left">
-            {/* Subtitle in Pink Barlow */}
             <div className="inline-flex items-center gap-2" {...motionProps({ preset: "fade-up", delay: 100 })}>
               <span className="font-heading text-xs sm:text-sm font-bold tracking-[0.2em] text-[#ee6196] uppercase">
                 {slide.subtitle}
               </span>
             </div>
 
-            {/* Massive Heading */}
             <h1
-              className="font-heading text-4xl sm:text-5xl lg:text-[62px] font-extrabold text-[#121c32] leading-[1.12] tracking-tight"
+              className="font-heading text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-[#121c32] leading-[1.12] tracking-tight"
               {...motionProps({ preset: "fade-up", delay: 200 })}
             >
               {slide.titlePart1} <br />
@@ -92,7 +90,6 @@ export function Hero() {
               </span>
             </h1>
 
-            {/* Description */}
             <p
               className="text-muted text-base sm:text-lg leading-relaxed max-w-xl font-normal"
               {...motionProps({ preset: "fade-up", delay: 300 })}
@@ -100,9 +97,24 @@ export function Hero() {
               {slide.description}
             </p>
 
+            {/* Core Business Focus Areas */}
+            <div
+              className="flex flex-wrap items-center gap-2 pt-1"
+              {...motionProps({ preset: "fade-up", delay: 350 })}
+            >
+              {focusAreas.map((area) => (
+                <span
+                  key={area}
+                  className="px-3 py-1 rounded-full bg-white/90 border border-slate-200/80 text-xs font-heading font-semibold text-[#121c32] shadow-sm"
+                >
+                  {area}
+                </span>
+              ))}
+            </div>
+
             {/* Action Buttons */}
             <div
-              className="flex flex-wrap items-center gap-4 pt-3"
+              className="flex flex-wrap items-center gap-4 pt-2"
               {...motionProps({ preset: "fade-up", delay: 400 })}
             >
               <Link
@@ -124,7 +136,7 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Authentic Isometric Illustration & Floating Shapes */}
+          {/* Right Column: Preserved Isometric Illustration & Floating Shapes */}
           <div
             className="lg:col-span-6 relative flex items-center justify-center"
             {...motionProps({ preset: "scale-in", delay: 250 })}
@@ -132,10 +144,10 @@ export function Hero() {
             <div className="relative w-full max-w-[560px] h-[360px] sm:h-[450px] lg:h-[520px]">
               {/* Floating Decorative Shapes */}
               {slide.shapes.map((shape, i) => (
-                <div key={i} className={shape.className}>
+                <div key={i} className={shape.className} aria-hidden="true">
                   <Image
                     src={shape.src}
-                    alt="Floating decorative shape"
+                    alt=""
                     width={100}
                     height={100}
                     className="w-full h-auto object-contain"
@@ -147,7 +159,7 @@ export function Hero() {
               <div className="relative w-full h-full flex items-center justify-center z-10 transition-all duration-700 ease-out transform">
                 <Image
                   src={slide.mainImage}
-                  alt="Editech Enterprise IT Illustration"
+                  alt="DT Solutions Digital Transformation Platform Illustration"
                   fill
                   priority
                   className="object-contain drop-shadow-2xl animate-float-slow"
@@ -158,8 +170,9 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Slider Controls (Prev / Next Buttons) */}
+      {/* Slider Controls */}
       <button
+        type="button"
         onClick={() => setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1))}
         aria-label="Previous Slide"
         className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/80 hover:bg-white text-slate-700 hover:text-[#5e6fb5] shadow-md items-center justify-center transition-all z-20 border border-slate-200"
@@ -168,6 +181,7 @@ export function Hero() {
       </button>
 
       <button
+        type="button"
         onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
         aria-label="Next Slide"
         className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/80 hover:bg-white text-slate-700 hover:text-[#5e6fb5] shadow-md items-center justify-center transition-all z-20 border border-slate-200"
@@ -179,6 +193,7 @@ export function Hero() {
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
         {slides.map((_, idx) => (
           <button
+            type="button"
             key={idx}
             onClick={() => setCurrentSlide(idx)}
             aria-label={`Go to slide ${idx + 1}`}

@@ -6,14 +6,13 @@ import Link from "next/link";
 import {
   CheckCircle2,
   ShieldCheck,
-  ArrowRight,
   Cpu,
   HelpCircle,
 } from "lucide-react";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { ContactForm } from "@/components/shared/ContactForm";
 import { servicesData } from "@/data/services";
-import { motionProps, staggerProps } from "@/components/motion";
+import { motionProps } from "@/components/motion";
 
 interface ServicePageProps {
   params: {
@@ -29,10 +28,10 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: ServicePageProps): Metadata {
   const service = servicesData.find((s) => s.slug === params.slug);
-  if (!service) return { title: "Service Not Found" };
+  if (!service) return { title: "Solution Not Found" };
 
   return {
-    title: `${service.title} | DT Solutions`,
+    title: `${service.title} | Solutions`,
     description: service.shortDesc,
     alternates: {
       canonical: `https://dtsolutions.pk/services/${service.slug}`,
@@ -47,24 +46,13 @@ export default function SingleServicePage({ params }: ServicePageProps) {
     notFound();
   }
 
-  const servicePhotos: Record<string, string> = {
-    "web-design-development": "/editech/services-1.jpg",
-    "custom-software-development": "/editech/services-3.jpg",
-    "ai-automation-workflows": "/editech/services-4.jpg",
-    "business-dashboards-portals": "/editech/services-5.jpg",
-    "api-integrations": "/editech/services-1.jpg",
-    "payment-gateway-integrations": "/editech/services-2.jpg",
-    "maintenance-support": "/editech/services-5.jpg",
-  };
-
-  const photo = servicePhotos[service.slug] || "/editech/services-1.jpg";
-  const relatedServices = servicesData.filter((s) => s.slug !== service.slug).slice(0, 3);
+  const relatedServices = servicesData.filter((s) => s.slug !== service.slug);
 
   return (
     <>
       <Breadcrumb
         items={[
-          { label: "Services", href: "/services" },
+          { label: "Solutions", href: "/services" },
           { label: service.title },
         ]}
         title={service.title}
@@ -76,10 +64,10 @@ export default function SingleServicePage({ params }: ServicePageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Main Content */}
             <div className="lg:col-span-8 space-y-10" {...motionProps({ preset: "fade-up", delay: 100 })}>
-              {/* Featured Service Image */}
+              {/* Preserved Featured Service Image */}
               <div className="relative h-[340px] sm:h-[420px] w-full rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src={photo}
+                  src={service.image}
                   alt={service.title}
                   fill
                   priority
@@ -103,11 +91,29 @@ export default function SingleServicePage({ params }: ServicePageProps) {
 
                 <div className="p-6 rounded-2xl bg-[#f8f9fc] border border-slate-200/80">
                   <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-[#121c32] mb-2">
-                    Who This Service Is Built For
+                    Who This Vertical Serves
                   </h3>
                   <p className="text-muted text-sm leading-relaxed">
                     {service.targetAudience}
                   </p>
+                </div>
+              </div>
+
+              {/* Capabilities List */}
+              <div className="space-y-4">
+                <h3 className="font-heading text-2xl font-bold text-[#121c32]">
+                  Key Capabilities in This Vertical
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {service.capabilities.map((cap, idx) => (
+                    <div
+                      key={idx}
+                      className="p-4 rounded-xl bg-[#f8f9fc] border border-slate-200/80 flex items-center gap-3 text-xs sm:text-sm font-semibold text-slate-800"
+                    >
+                      <CheckCircle2 className="w-4 h-4 text-[#ee6196] flex-shrink-0" />
+                      <span>{cap}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -131,7 +137,7 @@ export default function SingleServicePage({ params }: ServicePageProps) {
                 <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
                   <h3 className="font-heading text-lg font-bold text-[#121c32] flex items-center gap-2">
                     <ShieldCheck className="w-5 h-5 text-emerald-600" />
-                    <span>Business Outcomes</span>
+                    <span>Operational Outcomes</span>
                   </h3>
                   <ul className="space-y-2.5 text-sm text-muted">
                     {service.outcomes.map((o, i) => (
@@ -144,10 +150,10 @@ export default function SingleServicePage({ params }: ServicePageProps) {
                 </div>
               </div>
 
-              {/* Technical Features */}
+              {/* Engineering Standards */}
               <div className="space-y-4 pt-2">
                 <h3 className="font-heading text-2xl font-bold text-[#121c32]">
-                  Core Capabilities &amp; Standards
+                  Engineering Standards &amp; Architecture
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {service.features.map((feat, idx) => (
@@ -192,15 +198,15 @@ export default function SingleServicePage({ params }: ServicePageProps) {
             <div className="lg:col-span-4 space-y-8 sticky top-28" {...motionProps({ preset: "fade-up", delay: 200 })}>
               <div>
                 <h3 className="font-heading text-lg font-bold text-[#121c32] mb-3">
-                  Inquire About This Service
+                  Discuss This Solution
                 </h3>
                 <ContactForm defaultService={service.title} />
               </div>
 
-              {/* Related Services */}
+              {/* Other Verticals */}
               <div className="p-6 rounded-2xl bg-[#f8f9fc] border border-slate-200/80 space-y-4">
                 <h3 className="font-heading text-base font-bold text-[#121c32]">
-                  Other Services
+                  Other Business Verticals
                 </h3>
                 <div className="space-y-2">
                   {relatedServices.map((rel) => (

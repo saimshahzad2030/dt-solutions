@@ -39,7 +39,7 @@ export default function NotFound() {
             variant="outline"
             size="md"
           >
-            View Services
+            Explore Solutions
           </Button>
         </div>
       </div>

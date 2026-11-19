@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motionProps, staggerProps } from "@/components/motion";
 
 export function BrandLogos() {
@@ -14,8 +15,20 @@ export function BrandLogos() {
   return (
     <section className="py-12 bg-white border-y border-slate-100" {...motionProps({ preset: "fade", delay: 50 })}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-2 mb-6">
+          <span className="font-heading text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
+            Technology &amp; Ecosystem Collaborations
+          </span>
+          <Link
+            href="/partners"
+            className="font-heading text-xs font-semibold uppercase tracking-wider text-[#5e6fb5] hover:text-[#ee6196] transition-colors"
+          >
+            Our Partners →
+          </Link>
+        </div>
+
         <div
-          className="flex flex-wrap items-center justify-center lg:justify-between gap-8 sm:gap-12  opacity-100 "
+          className="flex flex-wrap items-center justify-center lg:justify-between gap-8 sm:gap-12 opacity-100"
           {...staggerProps({ delay: 50, step: 60 })}
         >
           {brands.map((src, idx) => (
@@ -26,7 +39,7 @@ export function BrandLogos() {
             >
               <Image
                 src={src}
-                alt={`Partner Brand ${idx + 1}`}
+                alt={`Ecosystem logo ${idx + 1}`}
                 width={120}
                 height={40}
                 className="max-h-10 w-auto object-contain"
@@ -38,4 +51,3 @@ export function BrandLogos() {
     </section>
   );
 }
-

@@ -26,23 +26,23 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   metadataBase: new URL("https://dtsolutions.pk"),
   title: {
-    default: "DT Solutions | Premium Software, Websites & Automation for Global Enterprises",
+    default: "DT Solutions | Government Digital Transformation, FinTech & Enterprise Technology",
     template: "%s | DT Solutions",
   },
   description:
-    "DT Solutions builds enterprise websites, custom software, executive dashboards, and AI automation systems for enterprises that want practical digital growth.",
+    "DT Solutions delivers enterprise technology, digital payment infrastructure and government transformation platforms that simplify complex operations and enable scalable digital services.",
   applicationName: companyData.legalName,
   keywords: [
-    "software engineering company",
-    "enterprise web development",
-    "business automation",
-    "AI automation",
-    "custom software development",
-    "dashboards and portals",
     "DT Solutions",
     "dtsolutions.pk",
+    "government digital transformation",
     "B-Pay Balochistan",
-    "Pakistan software house",
+    "FinTech payment infrastructure",
+    "Raast 1LINK 1BILL integration",
+    "provincial payment switch",
+    "enterprise software solutions",
+    "digital platforms and applications",
+    "technology infrastructure and security",
   ],
   authors: [{ name: companyData.legalName, url: "https://dtsolutions.pk" }],
   creator: companyData.legalName,
@@ -58,24 +58,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_PK",
     url: "https://dtsolutions.pk",
-    title: "Premium software, websites, and automation for global enterprises",
+    title: "DT Solutions | Powering Digital Transformation Through Technology & Innovation",
     description:
-      "DT Solutions builds websites, custom software, dashboards, and AI automation systems for enterprises that want practical digital growth.",
+      "DT Solutions delivers enterprise technology, digital payment infrastructure and government transformation platforms that simplify complex operations and enable scalable digital services.",
     siteName: companyData.legalName,
     images: [
       {
         url: "/images/orbit-glass.jpg",
         width: 1200,
         height: 630,
-        alt: "DT Solutions - Enterprise Software & Automation",
+        alt: "DT Solutions - Government Technology, FinTech & Enterprise Systems",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Premium software, websites, and automation for global enterprises",
+    title: "DT Solutions | Powering Digital Transformation Through Technology & Innovation",
     description:
-      "DT Solutions builds websites, custom software, dashboards, and AI automation systems for enterprises that want practical digital growth.",
+      "DT Solutions delivers enterprise technology, digital payment infrastructure and government transformation platforms that simplify complex operations and enable scalable digital services.",
     images: ["/images/orbit-glass.jpg"],
   },
   icons: {

@@ -6,15 +6,17 @@ import { Button } from "./Button";
 
 interface ContactFormProps {
   defaultService?: string;
+  defaultInquiryType?: string;
 }
 
-export function ContactForm({ defaultService }: ContactFormProps) {
+export function ContactForm({ defaultService, defaultInquiryType }: ContactFormProps) {
   const [formData, setFormData] = useState({
     name: "",
-    company: "",
+    organisation: "",
     email: "",
     phone: "",
-    service: defaultService || "Web Design & Development",
+    inquiryType: defaultInquiryType || "Government / Public Sector",
+    service: defaultService || "Government Digital Transformation",
     message: "",
   });
 
@@ -36,12 +38,13 @@ export function ContactForm({ defaultService }: ContactFormProps) {
     setErrorMessage("");
 
     try {
-      // Realistic API dispatch or email link
       await new Promise((resolve) => setTimeout(resolve, 800));
       setStatus("success");
     } catch {
       setStatus("error");
-      setErrorMessage("Something went wrong while sending your inquiry. Please email us directly at info@dtsolutions.pk.");
+      setErrorMessage(
+        "Unable to submit your inquiry right now. Please contact us directly at info@dtsolutions.pk."
+      );
     }
   };
 
@@ -52,10 +55,11 @@ export function ContactForm({ defaultService }: ContactFormProps) {
           <CheckCircle2 className="w-8 h-8" />
         </div>
         <h3 className="font-display text-2xl font-bold text-slate-900 mb-2">
-          Inquiry Received Successfully!
+          Inquiry Received
         </h3>
         <p className="text-muted text-base max-w-md mx-auto mb-6">
-          Thank you, <span className="font-semibold text-slate-800">{formData.name}</span>. Our solutions engineering team will review your requirements and respond within 24 hours.
+          Thank you, <span className="font-semibold text-slate-800">{formData.name}</span>. Your{" "}
+          <span className="font-semibold text-slate-800">{formData.inquiryType}</span> inquiry has been recorded. Our relevant team will review your requirements and follow up by email.
         </p>
         <Button
           variant="outline"
@@ -64,15 +68,16 @@ export function ContactForm({ defaultService }: ContactFormProps) {
             setStatus("idle");
             setFormData({
               name: "",
-              company: "",
+              organisation: "",
               email: "",
               phone: "",
-              service: "Web Design & Development",
+              inquiryType: defaultInquiryType || "Government / Public Sector",
+              service: defaultService || "Government Digital Transformation",
               message: "",
             });
           }}
         >
-          Send Another Message
+          Send Another Inquiry
         </Button>
       </div>
     );
@@ -86,30 +91,38 @@ export function ContactForm({ defaultService }: ContactFormProps) {
       <div className="space-y-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+            <label
+              htmlFor="contact-name"
+              className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2"
+            >
               Full Name <span className="text-accent">*</span>
             </label>
             <input
+              id="contact-name"
               type="text"
               name="name"
               required
               value={formData.name}
               onChange={handleChange}
-              placeholder="e.g. Faraz Ahmed"
+              placeholder="Your full name"
               className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-slate-900 text-sm bg-slate-50/50"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-              Company Name
+            <label
+              htmlFor="contact-organisation"
+              className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2"
+            >
+              Organisation / Department
             </label>
             <input
+              id="contact-organisation"
               type="text"
-              name="company"
-              value={formData.company}
+              name="organisation"
+              value={formData.organisation}
               onChange={handleChange}
-              placeholder="e.g. Acme Enterprise"
+              placeholder="Ministry, institution, or company name"
               className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-slate-900 text-sm bg-slate-50/50"
             />
           </div>
@@ -117,68 +130,107 @@ export function ContactForm({ defaultService }: ContactFormProps) {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+            <label
+              htmlFor="contact-email"
+              className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2"
+            >
               Email Address <span className="text-accent">*</span>
             </label>
             <input
+              id="contact-email"
               type="email"
               name="email"
               required
               value={formData.email}
               onChange={handleChange}
-              placeholder="e.g. faraz@company.com"
+              placeholder="name@organisation.com"
               className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-slate-900 text-sm bg-slate-50/50"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-              Phone Number <span className="text-accent">*</span>
+            <label
+              htmlFor="contact-phone"
+              className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2"
+            >
+              Contact Number
             </label>
             <input
+              id="contact-phone"
               type="tel"
               name="phone"
-              required
               value={formData.phone}
               onChange={handleChange}
-              placeholder="e.g. +92 300 1234567"
+              placeholder="Optional phone or extension"
               className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-slate-900 text-sm bg-slate-50/50"
             />
           </div>
         </div>
 
-        <div>
-          <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-            Project Type / Service <span className="text-accent">*</span>
-          </label>
-          <select
-            name="service"
-            value={formData.service}
-            onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-slate-900 text-sm bg-slate-50/50"
-          >
-            <option value="Web Design & Development">Web Design & Development</option>
-            <option value="Custom Software Development">Custom Software Development</option>
-            <option value="AI Automation & Workflows">AI Automation & Workflows</option>
-            <option value="Business Dashboards & Portals">Business Dashboards & Portals</option>
-            <option value="API Integrations">API Integrations</option>
-            <option value="Payment Gateway Integrations">Payment Gateway Integrations</option>
-            <option value="Maintenance & Support">Maintenance & Support</option>
-            <option value="Other / General Consultation">Other / General Consultation</option>
-          </select>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label
+              htmlFor="contact-inquiry-type"
+              className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2"
+            >
+              Inquiry Category <span className="text-accent">*</span>
+            </label>
+            <select
+              id="contact-inquiry-type"
+              name="inquiryType"
+              value={formData.inquiryType}
+              onChange={handleChange}
+              className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-slate-900 text-sm bg-slate-50/50"
+            >
+              <option value="Government / Public Sector">Government / Public Sector</option>
+              <option value="Financial Institution / FinTech">Financial Institution / FinTech</option>
+              <option value="Enterprise Client">Enterprise Client</option>
+              <option value="Strategic Partnership">Strategic Partnership</option>
+              <option value="Careers / Talent">Careers / Talent</option>
+              <option value="General Inquiry">General Inquiry</option>
+            </select>
+          </div>
+
+          <div>
+            <label
+              htmlFor="contact-service"
+              className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2"
+            >
+              Solution Focus <span className="text-accent">*</span>
+            </label>
+            <select
+              id="contact-service"
+              name="service"
+              value={formData.service}
+              onChange={handleChange}
+              className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-slate-900 text-sm bg-slate-50/50"
+            >
+              <option value="Government Digital Transformation">Government Digital Transformation</option>
+              <option value="FinTech & Payment Infrastructure">FinTech &amp; Payment Infrastructure</option>
+              <option value="Enterprise Software Solutions">Enterprise Software Solutions</option>
+              <option value="Digital Platforms & Applications">Digital Platforms &amp; Applications</option>
+              <option value="Technology Infrastructure & Security">Technology Infrastructure &amp; Security</option>
+              <option value="B-Pay / Public Payment Integration">B-Pay / Public Payment Integration</option>
+              <option value="General Consultation">General Consultation</option>
+            </select>
+          </div>
         </div>
 
         <div>
-          <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-            Project Overview & Goals <span className="text-accent">*</span>
+          <label
+            htmlFor="contact-message"
+            className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2"
+          >
+            Project Scope &amp; Objectives <span className="text-accent">*</span>
           </label>
           <textarea
+            id="contact-message"
             name="message"
             required
             rows={4}
             value={formData.message}
             onChange={handleChange}
-            placeholder="Tell us what you need, current bottlenecks, and any relevant tools your team uses today..."
+            placeholder="Describe your institutional, payment, or enterprise requirements, target timelines, and any key integration systems..."
             className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-slate-900 text-sm bg-slate-50/50 resize-y"
           />
         </div>
@@ -196,16 +248,21 @@ export function ContactForm({ defaultService }: ContactFormProps) {
           size="lg"
           className="w-full justify-center"
           disabled={status === "submitting"}
-          icon={status === "submitting" ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
+          icon={
+            status === "submitting" ? (
+              <Loader2 className="w-4 h-4 animate-spin" />
+            ) : (
+              <Send className="w-4 h-4" />
+            )
+          }
         >
-          {status === "submitting" ? "Sending Details..." : "Submit Project Inquiry"}
+          {status === "submitting" ? "Submitting Inquiry..." : "Submit Inquiry"}
         </Button>
 
         <p className="text-xs text-center text-muted">
-          We respect your privacy. All inquiries are covered by standard NDA protection. We reply within 24 hours.
+          Please avoid sharing sensitive credentials or restricted data in initial web inquiries. Mutual confidentiality agreements can be executed prior to detailed technical discovery.
         </p>
       </div>
     </form>
   );
 }
-

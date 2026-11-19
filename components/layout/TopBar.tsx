@@ -1,6 +1,5 @@
 import React from "react";
-import Link from "next/link";
-import { Mail, Clock, MapPin, Facebook, Twitter, Linkedin, Github } from "lucide-react";
+import { Mail, Clock, Linkedin, Twitter, Github } from "lucide-react";
 import { companyData } from "@/data/company";
 
 export function TopBar() {
@@ -10,12 +9,7 @@ export function TopBar() {
         <div className="flex items-center justify-between h-11">
           {/* Left contact & operating hours */}
           <div className="flex items-center space-x-6">
-            {/* <div className="flex items-center gap-2">
-              <MapPin className="w-3.5 h-3.5 text-[#ee6196]" />
-              <span>{companyData.location}</span>
-            </div> */}
-
-            <div className="flex items-center gap-2 border-l border-white/10 pl-6">
+            <div className="flex items-center gap-2">
               <Mail className="w-3.5 h-3.5 text-[#5e6fb5]" />
               <a
                 href={`mailto:${companyData.email}`}
@@ -27,15 +21,15 @@ export function TopBar() {
 
             <div className="flex items-center gap-2 border-l border-white/10 pl-6">
               <Clock className="w-3.5 h-3.5 text-[#ee6196]" />
-              <span>Office Hour : 10:00am - 7:00pm PKT</span>
+              <span>Office Hours: {companyData.operatingHours}</span>
             </div>
           </div>
 
-          {/* Right status & socials */}
+          {/* Right positioning summary & socials */}
           <div className="flex items-center space-x-4">
-            <div className="flex items-center gap-1.5 text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20 text-[11px] font-medium">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Replies within 24h</span>
+            <div className="flex items-center gap-1.5 text-slate-300 bg-white/5 px-3 py-0.5 rounded-full border border-white/10 text-[11px] font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ee6196]" />
+              <span>Government Tech · FinTech · Enterprise Systems</span>
             </div>
 
             <div className="flex items-center space-x-3 pl-4 border-l border-white/10">

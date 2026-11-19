@@ -2,20 +2,29 @@ export interface PortfolioItem {
   id: string;
   slug: string;
   title: string;
-  category: string;
+  subtitle?: string;
+  category: "Government Technology" | "Payment Infrastructure" | "Enterprise Platforms";
   badge: string;
   client: string;
+  isAnonymised?: boolean;
   coverage: string;
   timeline: string;
-  status: "In Development" | "Live Production" | "Deployed";
+  status: "Active Delivery" | "In Progress" | "Deployed";
   featured: boolean;
   shortDesc: string;
   fullDesc: string;
   challenge: string;
   approach: string;
   outcome: string;
-  metrics: { label: string; value: string }[];
+  highlights: { label: string; value: string }[];
   keyDeliverables: string[];
+  plannedCapabilities?: string[];
+  consortiumRoles?: {
+    dtSolutions: string[];
+    partnerName: string;
+    partnerRoles: string[];
+    verificationNote: string;
+  };
   techStack: string[];
   image: string;
 }
@@ -24,165 +33,231 @@ export const portfolioData: PortfolioItem[] = [
   {
     id: "B-Pay-balochistan",
     slug: "B-Pay-balochistan",
-    title: "Building the B-Pay Balochistan Platform",
-    category: "Institutional Integrations",
+    title: "B-Pay – Government of Balochistan",
+    subtitle: "Provincial Digital Payment & Revenue Collection Platform",
+    category: "Government Technology",
     badge: "Flagship Initiative",
-    client: "Provincial Institutional Authority",
-    coverage: "Multi-Department Provincial Scale",
-    timeline: "2024 - Present (Active Development)",
-    status: "In Development",
+    client: "Government of Balochistan (in collaboration with PayFast)",
+    isAnonymised: false,
+    coverage: "Province of Balochistan",
+    timeline: "Active Delivery (Phased Rollout)",
+    status: "Active Delivery",
     featured: true,
-    shortDesc: "End-to-end provincial digital payment platform replacing manual cash counters with online and mobile payment channels at provincial scale.",
-    fullDesc: "DT Solutions is developing the B-Pay Balochistan digital payment platform, a high-impact provincial digital transformation initiative designed to replace manual cash-based counters and dispersed collections with a unified, scalable electronic payment infrastructure.",
-    challenge: "Manual cash-based collections across provincial institutions created severe administrative overhead, lack of real-time fiscal tracking, long queues for citizens at payment centers, and reconciliation delays spanning multiple weeks.",
-    approach: "Engineered an enterprise microservice architecture connecting provincial institutions directly to the 1-Link national switch, enabling citizens to pay taxes, vehicle tokens, and institutional fees via mobile apps, internet banking, ATMs, and over-the-counter channels with instant verification.",
-    outcome: "Created a transparent, unified digital collection engine with sub-second payment callback processing, tamper-evident audit logs, and real-time treasury reconciliation dashboards for institutional leadership.",
-    metrics: [
-      { label: "Provincial Departments", value: "8+" },
-      { label: "Digital Payment Access", value: "24/7" },
-      { label: "Digital Payment Tracking", value: "100%" },
-      { label: "Every Bill", value: "1 App" },
+    shortDesc:
+      "DT Solutions, in collaboration with PayFast, is delivering B-Pay, a digital payment platform designed to transform the collection of government taxes, fees, levies, challans and other public-sector payments across Balochistan.",
+    fullDesc:
+      "DT Solutions, in collaboration with PayFast, is delivering B-Pay, a digital payment platform designed to transform the collection of government taxes, fees, levies, challans and other public-sector payments across Balochistan. The platform establishes a unified digital alternative to manual cash counters, connecting public-sector departments, citizen channels, and regulated payment gateway processing into a structured, auditable ecosystem.",
+    challenge:
+      "Traditional manual cash-based collection of provincial taxes, fees, levies, and challans creates administrative overhead for departments, queues and physical travel for citizens, and fragmented manual reconciliation across branches.",
+    approach:
+      "B-Pay is architected with a clear separation of platform engineering and regulated payment processing. DT Solutions leads technology development, citizen-facing mobile application delivery, government department integrations, digital tax and fee collection modules, administrative dashboards, and reconciliation capabilities, while PayFast provides payment gateway infrastructure, banking and payment channel connectivity, and gateway transaction processing.",
+    outcome:
+      "Establishes a scalable provincial foundation for transparent digital public-sector revenue collection, structured transaction tracking, and departmental reporting as participating departments and payment services are onboarded in phases.",
+    highlights: [
+      { label: "Initiative", value: "Provincial Public Sector" },
+      { label: "Collaboration", value: "DT Solutions & PayFast" },
+      { label: "Platform Role", value: "Digital Revenue & Challans" },
+      { label: "Delivery Model", value: "Phased Rollout" },
     ],
     keyDeliverables: [
-      "Online citizen tax payment web portal and mobile responsive UI",
-      "Vehicle token tax digital calculation and collection engine",
-      "Revenue authority e-filing and assessment payment modules",
-      "Direct 1-Link switch and inter-bank payment integration",
-      "Department-level reconciliation and revenue tracking dashboards",
-      "Citizen self-service tracking and digital payment receipt verification"
+      "Core digital payment platform architecture and platform management",
+      "Citizen-facing mobile application for digital public-sector payments",
+      "Digital tax, fee, levy, and challan collection modules",
+      "Government department integration interfaces",
+      "Administrative dashboards and departmental reporting",
+      "Transaction tracking and reconciliation capabilities",
     ],
-    techStack: ["Next.js", "Node.js", "PostgreSQL", "Redis", "1-Link Switch", "Docker", "Tailwind CSS"],
-    image: "/images/orbit-glass.jpg"
+    plannedCapabilities: [
+      "Phased onboarding of additional provincial departments and fee categories",
+      "Expanded citizen self-service payment history and digital receipt services",
+      "Broader payment channel and departmental reporting enhancements aligned with operational agreements",
+    ],
+    consortiumRoles: {
+      dtSolutions: [
+        "Technology development and platform management",
+        "Citizen-facing mobile application",
+        "Government department integrations",
+        "Digital tax and fee collection modules",
+        "Administrative dashboards and reporting",
+        "Transaction tracking and reconciliation capabilities",
+      ],
+      partnerName: "PayFast",
+      partnerRoles: [
+        "Payment gateway infrastructure",
+        "Banking and payment channel connectivity",
+        "Payment processing through supported channels",
+        "Gateway transaction processing and related services",
+      ],
+      verificationNote:
+        "Responsibilities reflect the current collaborative delivery framework and remain subject to formal consortium and operational agreements.",
+    },
+    techStack: [
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "Mobile Application",
+      "Payment Gateway APIs",
+      "Docker",
+    ],
+    image: "/editech/9.jpg",
   },
   {
     id: "institutional-digitization",
     slug: "institutional-digitization",
-    title: "Institutional Web Systems & Digital Transformation",
-    category: "Institutional Integrations",
-    badge: "Institutional Solutions",
-    client: "Regional Institutions",
-    coverage: "Multi-Agency",
-    timeline: "Ongoing",
-    status: "In Development",
+    title: "Government Digitisation & E-Filing Workflows",
+    subtitle: "Public-Sector Workflow Modernisation",
+    category: "Government Technology",
+    badge: "Government Digitisation",
+    client: "Anonymised Public-Sector Engagement (Confidential)",
+    isAnonymised: true,
+    coverage: "Multi-Department Institutional Scope",
+    timeline: "Structured Delivery",
+    status: "In Progress",
     featured: true,
-    shortDesc: "Modernizing institutional operations through digital workflows, e-filing systems, and citizen self-service portals.",
-    fullDesc: "A comprehensive institutional digital modernization project designed to transition traditional paper-based administrative processes into structured, auditable digital workflows that accelerate processing times.",
-    challenge: "Legacy paper tracking and physical movement of files resulted in multi-week delays for service approvals, high document loss risk, and limited status visibility for senior officials.",
-    approach: "Designed a secure role-based web system with digital document tracking, automated notifications, e-signatures, and user verification dashboards.",
-    outcome: "Streamlined inter-departmental communication, cut average file processing times by 65%, and established transparent accountability across departments.",
-    metrics: [
-      { label: "Processing Speedup", value: "65%" },
-      { label: "Audit Compliance", value: "100%" },
-      { label: "Department Access", value: "24/7 Secure" },
+    shortDesc:
+      "Modernising administrative workflows through structured e-filing, role-based approval routing, and citizen self-service tracking portals.",
+    fullDesc:
+      "An anonymised public-sector digital transformation initiative focused on transitioning paper-based departmental file movement and application approvals into auditable, role-based digital workflows with status visibility for authorised officials and applicants.",
+    challenge:
+      "Manual paper tracking and physical file transfers across offices resulted in limited visibility into pending approvals, duplicated record keeping, and administrative delays.",
+    approach:
+      "Designed a modular web application with structured case intake, role-based access controls, digital status tracking, automated notifications, and verifiable audit trails across departmental stages.",
+    outcome:
+      "Delivered a structured digital workflow foundation that centralises case records, clarifies approval ownership across roles, and provides auditable activity logs for institutional governance.",
+    highlights: [
+      { label: "Engagement", value: "Anonymised (Confidential)" },
+      { label: "Focus", value: "E-Government Workflows" },
+      { label: "Governance", value: "RBAC & Audit Trails" },
+      { label: "Delivery", value: "Web Portal & Admin" },
     ],
     keyDeliverables: [
-      "E-filing and case tracking web application",
-      "Role-based administrative dashboards for department heads",
-      "User status verification and automated SMS/email alerts",
-      "Tamper-proof audit logs and document versioning"
+      "Digital e-filing and structured case tracking web application",
+      "Role-based administrative dashboards for departmental oversight",
+      "Applicant status tracking and structured notification workflows",
+      "Revision history and immutable administrative audit logs",
     ],
-    techStack: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS", "Prisma"],
-    image: "/images/orbit-glass.jpg"
+    techStack: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS", "REST APIs"],
+    image: "/editech/10.jpg",
   },
   {
     id: "multi-bank-fintech-switch",
     slug: "multi-bank-fintech-switch",
-    title: "Secure Multi-Bank & Payment Switch Infrastructure",
-    category: "Integrations",
-    badge: "Financial Technology",
-    client: "Enterprise FinTech Organization",
-    coverage: "Nationwide",
-    timeline: "Completed",
-    status: "Live Production",
+    title: "Payment Gateway & Multi-Channel Integration Architecture",
+    subtitle: "FinTech Middleware & Settlement Reconciliation",
+    category: "Payment Infrastructure",
+    badge: "Payment Infrastructure",
+    client: "Anonymised Commercial FinTech Engagement (Confidential)",
+    isAnonymised: true,
+    coverage: "Multi-Channel Payment Rails",
+    timeline: "Deployed",
+    status: "Deployed",
     featured: false,
-    shortDesc: "High-throughput financial integration gateway managing concurrent bank transaction routing with sub-second callbacks.",
-    fullDesc: "Architected a distributed payment gateway middleware connecting enterprise ecommerce platforms with leading commercial banks, mobile wallets (JazzCash, Easypaisa), and card switches.",
-    challenge: "High checkout abandonment due to erratic payment gateway timeouts, failed webhook deliveries, and unverified callback tampering.",
-    approach: "Implemented an idempotent message queue architecture with cryptographic payload verification, dynamic fallback routing, and instant webhook listeners.",
-    outcome: "Achieved 99.98% payment routing reliability, eliminated double-debit anomalies, and reduced checkout processing latency to under 800 milliseconds.",
-    metrics: [
-      { label: "Routing Latency", value: "<800ms" },
-      { label: "Success Rate", value: "99.98%" },
-      { label: "Monthly Volume", value: "$1.5M+" },
+    shortDesc:
+      "Payment integration middleware unifying commercial gateways, banking APIs, and wallet channels with cryptographic callback verification and reconciliation.",
+    fullDesc:
+      "An anonymised payment engineering engagement delivering a unified integration layer connecting commercial applications with supported payment gateways, banking channels, and digital wallets alongside automated callback verification and settlement matching.",
+    challenge:
+      "Maintaining separate point-to-point integrations across multiple payment providers introduced inconsistent webhook handling, reconciliation mismatches, and fragile error recovery.",
+    approach:
+      "Architected a unified payment abstraction API with idempotent transaction handling, cryptographic callback signature verification, structured retry queues, and standardised settlement reconciliation outputs.",
+    outcome:
+      "Simplified multi-channel payment operations under a single integration interface, improved callback integrity checks, and provided finance teams with structured reconciliation reports.",
+    highlights: [
+      { label: "Engagement", value: "Anonymised (Confidential)" },
+      { label: "Focus", value: "Payment Middleware" },
+      { label: "Integrity", value: "Idempotent & Verified" },
+      { label: "Output", value: "Settlement Reconciliation" },
     ],
     keyDeliverables: [
-      "Unified payment abstraction API layer",
-      "Automated bank statement reconciliation parser",
-      "Cryptographic webhook listener with HMAC SHA-256 verification",
-      "Real-time transaction health monitor and auto-failover"
+      "Unified payment integration abstraction API layer",
+      "Cryptographic webhook and callback verification pipeline",
+      "Idempotent transaction ledger preventing duplicate postings",
+      "Structured settlement matching and reconciliation export module",
     ],
-    techStack: ["Node.js", "Redis", "TypeScript", "PostgreSQL", "Docker", "AWS"],
-    image: "/images/orbit-glass.jpg"
+    techStack: ["Node.js", "TypeScript", "Redis", "PostgreSQL", "Docker"],
+    image: "/editech/project-3.jpg",
   },
   {
     id: "enterprise-operations-portal",
     slug: "enterprise-operations-portal",
-    title: "Executive Operations & Revenue Dashboard",
-    category: "Web Systems",
-    badge: "Operations ERP",
-    client: "Commercial Logistics & Supply Group",
-    coverage: "Corporate",
-    timeline: "Completed",
-    status: "Live Production",
+    title: "Enterprise Operations & Business Intelligence Portal",
+    subtitle: "Unified Management Console & Executive Reporting",
+    category: "Enterprise Platforms",
+    badge: "Enterprise Platforms",
+    client: "Anonymised Enterprise Client (Confidential)",
+    isAnonymised: true,
+    coverage: "Multi-Branch Corporate Operations",
+    timeline: "Deployed",
+    status: "Deployed",
     featured: false,
-    shortDesc: "Real-time analytics and departmental performance command center unifying ERP, inventory, and field service data.",
-    fullDesc: "Built an executive command center that continuously ingests operational data across multi-city branches, transforming complex queries into clear actionable visual dashboards for board members.",
-    challenge: "Executive management spent days each month waiting for compiled spreadsheets from branch managers, making dynamic inventory allocation impossible.",
-    approach: "Developed an interactive Next.js dashboard backed by high-performance analytical database aggregations and automated nightly ETL jobs.",
-    outcome: "Empowered leadership with live visibility into revenue, shipments, and inventory churn, reducing manual reporting labor from 40 hours to zero.",
-    metrics: [
-      { label: "Reporting Hours Saved", value: "40 hrs/mo" },
-      { label: "Data Freshness", value: "Live Real-Time" },
-      { label: "User Satisfaction", value: "98%" },
+    shortDesc:
+      "Centralised enterprise portal and BI dashboard consolidating operational workflows, approvals, and branch reporting into a single web platform.",
+    fullDesc:
+      "An anonymised enterprise software build replacing disconnected regional spreadsheets and manual status compilation with a unified web portal combining operational data capture, role-based approvals, and executive business intelligence reporting.",
+    challenge:
+      "Operational leadership relied on manually consolidated branch spreadsheets, delaying visibility into operational exceptions, inventory status, and departmental performance.",
+    approach:
+      "Engineered a role-segmented enterprise web portal backed by relational data models, scheduled synchronisation pipelines, interactive KPI views, and structured CSV/PDF reporting.",
+    outcome:
+      "Provided branch managers and executive leadership with a single source of operational truth, structured approval workflows, and consistent periodic reporting.",
+    highlights: [
+      { label: "Engagement", value: "Anonymised (Confidential)" },
+      { label: "Focus", value: "Enterprise ERP & BI" },
+      { label: "Access", value: "Multi-Branch RBAC" },
+      { label: "Reporting", value: "Dashboards & Exports" },
     ],
     keyDeliverables: [
-      "Custom KPI charts, trend analyses, and variance monitors",
-      "Branch-level drill-down capabilities with granular RBAC permissions",
-      "Automated PDF executive summary generation",
-      "Data export in Excel, CSV, and secure API formats"
+      "Role-based enterprise operations and approval web portal",
+      "Executive BI dashboard with branch-level drill-down views",
+      "Automated data aggregation and exception highlighting",
+      "Structured Excel, CSV, and PDF management report exports",
     ],
-    techStack: ["Next.js", "React", "Recharts", "PostgreSQL", "Tailwind CSS"],
-    image: "/images/orbit-glass.jpg"
+    techStack: ["Next.js", "React", "TypeScript", "PostgreSQL", "Tailwind CSS"],
+    image: "/editech/9.jpg",
   },
   {
     id: "ai-intake-automation",
     slug: "ai-intake-automation",
-    title: "Intelligent Customer Intake & Workflow Automation",
-    category: "Integrations",
-    badge: "AI Automation",
-    client: "Global Consulting & Legal Practice",
-    coverage: "International",
-    timeline: "Completed",
-    status: "Live Production",
+    title: "Structured Intake & Operational Workflow Automation",
+    subtitle: "Enterprise Process Automation & Document Routing",
+    category: "Enterprise Platforms",
+    badge: "Process Automation",
+    client: "Anonymised Professional Services Engagement (Confidential)",
+    isAnonymised: true,
+    coverage: "Internal Operations & CRM",
+    timeline: "Deployed",
+    status: "Deployed",
     featured: false,
-    shortDesc: "AI-powered inbound request triage and document classification pipeline saving hundreds of operational hours.",
-    fullDesc: "Designed an automated inbound client intake system that parses unstructured emails, attached contracts, and form requests, categorizing priority and populating the internal CRM.",
-    challenge: "Senior attorneys and consultants were spending 2+ hours each morning manually triaging inbound client documents and routing requests to appropriate departments.",
-    approach: "Constructed an automated processing pipeline utilizing LLMs for entity extraction, sentiment analysis, and urgency scoring with Slack notifications.",
-    outcome: "Cut enquiry response time from 14 hours to 15 minutes, with 94% accuracy in department auto-assignment.",
-    metrics: [
-      { label: "Response Delay", value: "-90%" },
-      { label: "Auto-Triage Accuracy", value: "94%" },
-      { label: "Weekly Hours Saved", value: "25+ hrs" },
+    shortDesc:
+      "Automated client intake, document classification, and internal routing pipeline built with human-in-the-loop review and CRM integration.",
+    fullDesc:
+      "An anonymised enterprise automation engagement focused on structuring unstructured client requests and supporting documents into categorised internal tickets with human review checkpoints before downstream CRM updates.",
+    challenge:
+      "Operations teams manually sorted incoming emails, forms, and attachments across shared inboxes, leading to inconsistent categorisation and slow handoffs between departments.",
+    approach:
+      "Implemented a structured intake and workflow routing pipeline combining deterministic validation rules, supporting document extraction, internal team alerts, and a human review interface for ambiguous cases.",
+    outcome:
+      "Standardised inbound request handling, improved routing consistency across internal teams, and preserved clear human oversight over client communications.",
+    highlights: [
+      { label: "Engagement", value: "Anonymised (Confidential)" },
+      { label: "Focus", value: "Workflow Automation" },
+      { label: "Governance", value: "Human-in-the-Loop" },
+      { label: "Integration", value: "CRM & Notifications" },
     ],
     keyDeliverables: [
-      "Secure document parsing and entity extraction engine",
-      "Integration with HubSpot CRM and Slack alerts",
-      "Human-in-the-loop review dashboard for ambiguous requests",
-      "Automated confirmation email generation"
+      "Structured inbound document parsing and routing workflow",
+      "CRM and internal workspace notification integrations",
+      "Human review dashboard for exception handling and approval",
+      "Audit trail of intake categorisation and assignment actions",
     ],
-    techStack: ["Python", "FastAPI", "OpenAI API", "PostgreSQL", "Next.js"],
-    image: "/images/orbit-glass.jpg"
+    techStack: ["Python", "Node.js", "PostgreSQL", "Next.js", "REST APIs"],
+    image: "/editech/10.jpg",
   },
-
-
-
 ];
 
 export const portfolioCategories = [
   "All",
-  "Institutional Integrations",
-  "Web Systems",
-  "Integrations"
+  "Government Technology",
+  "Payment Infrastructure",
+  "Enterprise Platforms",
 ];
-

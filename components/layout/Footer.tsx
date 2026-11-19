@@ -4,9 +4,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Mail,
-  MapPin,
-  Clock,
   ArrowRight,
   Linkedin,
   Twitter,
@@ -33,12 +30,12 @@ export function Footer() {
   return (
     <footer className="bg-[#07132b] text-slate-300 relative overflow-hidden border-t border-white/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 relative z-10">
-        {/* 4 Main Footer Columns matching Editech */}
+        {/* 4 Main Footer Columns */}
         <div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14 border-b border-white/10"
           {...staggerProps({ delay: 60, step: 80 })}
         >
-          {/* Col 1: About */}
+          {/* Col 1: About — preserved exact logo */}
           <div className="lg:col-span-4 space-y-5" {...motionProps({ preset: "fade-up" })}>
             <Link href="/" className="inline-block bg-white p-2.5 rounded-xl">
               <Image
@@ -51,7 +48,7 @@ export function Footer() {
             </Link>
 
             <p className="text-sm text-slate-300 leading-relaxed max-w-sm">
-              We are a premier Information Technology Company providing the highest quality in software engineering, provincial financial switches, websites, and business automation solutions.
+              {companyData.description}
             </p>
 
             {/* Socials */}
@@ -93,7 +90,7 @@ export function Footer() {
           {/* Col 2: Quick Links */}
           <div className="lg:col-span-2 space-y-4" {...motionProps({ preset: "fade-up" })}>
             <h4 className="font-heading text-base font-bold text-white uppercase tracking-wider">
-              Quick Links
+              Company
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
@@ -107,41 +104,51 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white inline-flex items-center gap-1.5 transition-colors">
-                  <ArrowRight className="w-3 h-3 text-[#ee6196]" /> Services
+                <Link href="/portfolio" className="hover:text-white inline-flex items-center gap-1.5 transition-colors">
+                  <ArrowRight className="w-3 h-3 text-[#ee6196]" /> Our Projects
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio" className="hover:text-white inline-flex items-center gap-1.5 transition-colors">
-                  <ArrowRight className="w-3 h-3 text-[#ee6196]" /> Projects
+                <Link href="/technology-security" className="hover:text-white inline-flex items-center gap-1.5 transition-colors">
+                  <ArrowRight className="w-3 h-3 text-[#ee6196]" /> Tech &amp; Security
+                </Link>
+              </li>
+              <li>
+                <Link href="/partners" className="hover:text-white inline-flex items-center gap-1.5 transition-colors">
+                  <ArrowRight className="w-3 h-3 text-[#ee6196]" /> Our Partners
                 </Link>
               </li>
               <li>
                 <Link href="/blog" className="hover:text-white inline-flex items-center gap-1.5 transition-colors">
-                  <ArrowRight className="w-3 h-3 text-[#ee6196]" /> Blog
+                  <ArrowRight className="w-3 h-3 text-[#ee6196]" /> Insights
+                </Link>
+              </li>
+              <li>
+                <Link href="/careers" className="hover:text-white inline-flex items-center gap-1.5 transition-colors">
+                  <ArrowRight className="w-3 h-3 text-[#ee6196]" /> Careers
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="hover:text-white inline-flex items-center gap-1.5 transition-colors">
-                  <ArrowRight className="w-3 h-3 text-[#ee6196]" /> Contact us
+                  <ArrowRight className="w-3 h-3 text-[#ee6196]" /> Contact Us
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Services */}
+          {/* Col 3: Solutions (5 Verticals) */}
           <div className="lg:col-span-3 space-y-4" {...motionProps({ preset: "fade-up" })}>
             <h4 className="font-heading text-base font-bold text-white uppercase tracking-wider">
-              Our Services
+              Our Solutions
             </h4>
             <ul className="space-y-2.5 text-sm">
-              {servicesData.slice(0, 6).map((svc) => (
+              {servicesData.map((svc) => (
                 <li key={svc.id}>
                   <Link
                     href={`/services/${svc.slug}`}
                     className="hover:text-white inline-flex items-center gap-1.5 transition-colors text-slate-300"
                   >
-                    <ArrowRight className="w-3 h-3 text-[#5e6fb5]" />
+                    <ArrowRight className="w-3 h-3 text-[#5e6fb5] flex-shrink-0" />
                     <span>{svc.title}</span>
                   </Link>
                 </li>
@@ -149,19 +156,19 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Col 4: Newsletter */}
+          {/* Col 4: Updates & Contact */}
           <div className="lg:col-span-3 space-y-4" {...motionProps({ preset: "fade-up" })}>
             <h4 className="font-heading text-base font-bold text-white uppercase tracking-wider">
-              News Letter
+              Updates &amp; Contact
             </h4>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Subscribe to get latest technical insights, enterprise case studies, and engineering updates directly in your inbox.
+              Receive technical briefings, public-sector platform updates, and engineering insights from DT Solutions.
             </p>
 
             {subscribed ? (
               <div className="flex items-center gap-2 p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400 text-xs">
                 <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                <span>Subscribed successfully!</span>
+                <span>Thank you for registering your interest.</span>
               </div>
             ) : (
               <form onSubmit={handleSubscribe} className="space-y-3">
@@ -171,8 +178,9 @@ export function Footer() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
-                    className="w-full px-4 py-3 rounded-full bg-white/5 border border-white/15 text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-2 focus:ring-[#ee6196]"
+                    placeholder="Enter your business email"
+                    aria-label="Business email for updates"
+                    className="w-full px-4 py-3 pr-12 rounded-full bg-white/5 border border-white/15 text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-2 focus:ring-[#ee6196]"
                   />
                   <button
                     type="submit"
@@ -185,8 +193,17 @@ export function Footer() {
               </form>
             )}
 
-            <div className="pt-2 text-xs text-slate-400">
-              Operating hours: {companyData.operatingHours}
+            <div className="pt-2 space-y-1 text-xs text-slate-400">
+              <div>
+                Email:{" "}
+                <a
+                  href={`mailto:${companyData.email}`}
+                  className="text-slate-200 hover:text-white transition-colors"
+                >
+                  {companyData.email}
+                </a>
+              </div>
+              <div>Hours: {companyData.operatingHours}</div>
             </div>
           </div>
         </div>
@@ -194,18 +211,18 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
           <p>
-            © {new Date().getFullYear()} {companyData.legalName}. All rights reserved. Based in Pakistan.
+            © {new Date().getFullYear()} {companyData.legalName}. All rights reserved.
           </p>
 
           <div className="flex items-center space-x-6">
-            <Link href="/contact" className="hover:text-white transition-colors">
-              Support
-            </Link>
-            <Link href="/about" className="hover:text-white transition-colors">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/services" className="hover:text-white transition-colors">
+            <Link href="/terms-of-use" className="hover:text-white transition-colors">
               Terms of Use
+            </Link>
+            <Link href="/contact" className="hover:text-white transition-colors">
+              Contact
             </Link>
           </div>
         </div>

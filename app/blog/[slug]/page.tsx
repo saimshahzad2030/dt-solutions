@@ -29,10 +29,10 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: BlogPostProps): Metadata {
   const post = blogPosts.find((p) => p.slug === params.slug);
-  if (!post) return { title: "Article Not Found" };
+  if (!post) return { title: "Insight Not Found" };
 
   return {
-    title: `${post.title} | DT Solutions Insights`,
+    title: `${post.title} | Insights`,
     description: post.excerpt,
     alternates: {
       canonical: `https://dtsolutions.pk/blog/${post.slug}`,
@@ -41,7 +41,7 @@ export function generateMetadata({ params }: BlogPostProps): Metadata {
       type: "article",
       title: post.title,
       description: post.excerpt,
-      publishedTime: post.publishDate,
+      publishedTime: post.isoDate,
       authors: [post.author.name],
     },
   };
@@ -55,11 +55,11 @@ export default function SingleBlogPost({ params }: BlogPostProps) {
   }
 
   const blogImages: Record<string, string> = {
-    "when-an-enterprise-actually-needs-custom-software": "/editech/blog-12-410x250.jpg",
-    "how-structured-workflows-reduce-response-delays": "/editech/blog-11-410x250.jpg",
-    "dashboards-that-owners-actually-keep-checking": "/editech/blog-10-410x250.jpg",
-    "ai-for-operations-teams-where-it-helps-and-where-it-doesnt": "/editech/blog-12-410x250.jpg",
-    "website-credibility-fixes-that-matter-for-b2b-buyers": "/editech/blog-11-410x250.jpg",
+    "when-an-enterprise-actually-needs-custom-software": "/editech/1.jpg",
+    "how-structured-workflows-reduce-response-delays": "/editech/2.jpg",
+    "dashboards-that-owners-actually-keep-checking": "/editech/3.jpg",
+    "ai-for-operations-teams-where-it-helps-and-where-it-doesnt": "/1.jpg",
+    "website-credibility-fixes-that-matter-for-b2b-buyers": "/editech/2.jpg",
   };
 
   const blogImg = blogImages[post.slug] || "/editech/blog-12-410x250.jpg";
@@ -71,7 +71,7 @@ export default function SingleBlogPost({ params }: BlogPostProps) {
     headline: post.title,
     description: post.excerpt,
     author: {
-      "@type": "Person",
+      "@type": "Organization",
       name: post.author.name,
     },
     publisher: {
@@ -82,7 +82,7 @@ export default function SingleBlogPost({ params }: BlogPostProps) {
         url: "https://dtsolutions.pk/dt-solutions-logo.png",
       },
     },
-    datePublished: "2026-10-01",
+    datePublished: post.isoDate,
     mainEntityOfPage: `https://dtsolutions.pk/blog/${post.slug}`,
   };
 
@@ -95,7 +95,7 @@ export default function SingleBlogPost({ params }: BlogPostProps) {
 
       <Breadcrumb
         items={[
-          { label: "Blog", href: "/blog" },
+          { label: "Insights", href: "/blog" },
           { label: post.title },
         ]}
         title={post.title}
@@ -107,7 +107,7 @@ export default function SingleBlogPost({ params }: BlogPostProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-5xl mx-auto">
             {/* Main Article Body */}
             <div className="lg:col-span-8 space-y-8" {...motionProps({ preset: "fade-up", delay: 100 })}>
-              {/* Featured Blog Image */}
+              {/* Preserved Featured Blog Image */}
               <div className="relative h-[320px] sm:h-[400px] w-full rounded-3xl overflow-hidden shadow-xl">
                 <Image
                   src={blogImg}
@@ -144,7 +144,7 @@ export default function SingleBlogPost({ params }: BlogPostProps) {
                   {...motionProps({ preset: "fade-up", delay: 150 })}
                 >
                   <span className="font-heading text-sm font-bold uppercase tracking-wider text-[#121c32] block">
-                    Key Executive Takeaways
+                    Key Takeaways
                   </span>
                   <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
                     {post.takeaways.map((item, i) => (
@@ -177,7 +177,7 @@ export default function SingleBlogPost({ params }: BlogPostProps) {
                   href="/contact"
                   className="inline-flex items-center gap-2 text-xs font-heading font-bold uppercase tracking-wider text-[#ee6196] hover:text-[#5e6fb5] transition-colors"
                 >
-                  <span>Discuss Your Project</span>
+                  <span>Discuss Your Initiative</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -187,21 +187,44 @@ export default function SingleBlogPost({ params }: BlogPostProps) {
             <div className="lg:col-span-4 space-y-6 sticky top-28" {...motionProps({ preset: "fade-up", delay: 200 })}>
               <div className="p-6 sm:p-8 rounded-3xl bg-[#07132b] text-white border border-white/10 shadow-xl space-y-4">
                 <span className="text-[10px] font-heading font-bold uppercase tracking-wider text-[#ee6196] bg-white/10 px-2.5 py-1 rounded-full inline-block">
-                  Have a similar requirement?
+                  Technical Briefing
                 </span>
-                <h4 className="font-heading text-xl font-bold">
-                  Speak Directly With Lead Engineers
+                <h4 className="font-heading text-xl font-bold text-white">
+                  Speak With Our Engineering Team
                 </h4>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  We will evaluate your current workflow and suggest a concrete, practical roadmap within 24 hours.
+                  Share your institutional, payment infrastructure, or enterprise platform requirements to arrange a structured technical discussion.
                 </p>
                 <Link
                   href="/contact"
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#ee6196] to-[#f78da7] hover:from-[#e34682] hover:to-[#ee6196] text-white font-heading font-bold text-xs uppercase tracking-wider shadow-md transition-all"
                 >
-                  <span>Start Project Inquiry</span>
+                  <span>Contact Us</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
+              </div>
+
+              {/* Related Insights */}
+              <div className="p-6 rounded-2xl bg-[#f8f9fc] border border-slate-200/80 space-y-4">
+                <h4 className="font-heading text-sm font-bold text-[#121c32]">
+                  Related Insights
+                </h4>
+                <div className="space-y-3">
+                  {relatedPosts.map((rel) => (
+                    <Link
+                      key={rel.id}
+                      href={`/blog/${rel.slug}`}
+                      className="block p-3 rounded-xl bg-white border border-slate-200/80 hover:border-[#5e6fb5]/40 transition-colors"
+                    >
+                      <span className="text-[10px] font-heading font-bold uppercase text-[#ee6196] block">
+                        {rel.category}
+                      </span>
+                      <span className="text-xs font-bold text-slate-800 line-clamp-2 mt-0.5 block">
+                        {rel.title}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

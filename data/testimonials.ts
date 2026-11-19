@@ -1,54 +1,46 @@
-export interface TestimonialItem {
+export interface DeliveryCapability {
   id: string;
-  name: string;
-  role: string;
-  company: string;
-  quote: string;
-  rating: number;
-  avatarInitials: string;
-  accentColor: string;
+  title: string;
+  category: string;
+  description: string;
 }
 
-export const testimonialsData: TestimonialItem[] = [
+export const deliveryCapabilities: DeliveryCapability[] = [
   {
-    id: "test-1",
-    name: "Faraz Ahmed",
-    role: "Operations Lead",
-    company: "Provincial Logistics Partner",
-    quote: "DT Solutions understood our workflow quickly and built something practical instead of overcomplicating it. Communication stayed clear from start to finish, and our team adopted the platform without disruption.",
-    rating: 5,
-    avatarInitials: "FA",
-    accentColor: "#5e6fb5",
+    id: "cap-1",
+    title: "Government Digital Transformation",
+    category: "Public Sector",
+    description:
+      "End-to-end digital tax, levy, challan, and citizen service platforms engineered for multi-department governance and transparent reporting.",
   },
   {
-    id: "test-2",
-    name: "Hina Raza",
-    role: "Director",
-    company: "SME Commercial Services",
-    quote: "The team set realistic expectations and trained our staff so the system was adopted quickly. Their technical understanding and responsiveness made all the difference in modernizing our client management.",
-    rating: 5,
-    avatarInitials: "HR",
-    accentColor: "#ee6196",
+    id: "cap-2",
+    title: "FinTech & Payment Rails",
+    category: "Payments",
+    description:
+      "Payment gateway connectivity, provincial payment switches, Raast, 1LINK, and 1BILL integrations with structured settlement and reconciliation.",
   },
   {
-    id: "test-3",
-    name: "Usman Tariq",
-    role: "Founder",
-    company: "Enterprise Technology Venture",
-    quote: "After the website redesign and the new workflow automations, our enquiries are clearer and follow-ups happen faster. It made a visible difference to our pipeline and operational credibility.",
-    rating: 5,
-    avatarInitials: "UT",
-    accentColor: "#47579a",
+    id: "cap-3",
+    title: "Enterprise Software & Platforms",
+    category: "Enterprise",
+    description:
+      "Role-based ERP/CRM applications, executive BI dashboards, web and mobile portals, and automated operational workflows.",
   },
   {
-    id: "test-4",
-    name: "Kamran Siddiqui",
-    role: "Head of Digital Initiatives",
-    company: "Public Sector Program",
-    quote: "Developing B-Pay infrastructure requires intense regulatory attention and bulletproof security. DT Solutions demonstrated rigorous discipline, proactive problem-solving, and delivered rock-solid engineering.",
-    rating: 5,
-    avatarInitials: "KS",
-    accentColor: "#5e6fb5",
-  }
+    id: "cap-4",
+    title: "Security & Infrastructure Engineering",
+    category: "Security",
+    description:
+      "Encryption, role-based access control, auditable transaction logging, PCI DSS readiness engineering, cloud resilience, and ongoing monitoring.",
+  },
 ];
 
+export const engineeringPerspective = {
+  eyebrow: "DELIVERY ETHOS",
+  heading: "Built for Institutional Reliability & Long-Term Stewardship",
+  statement:
+    "Public-sector platforms and financial infrastructure leave no room for guesswork. Our engineering practice prioritises clear requirements, auditable workflows, secure integration boundaries, and maintainable architectures that organisations can operate with confidence.",
+  attributionTitle: "DT Solutions Engineering Practice",
+  attributionSubtitle: "Government Technology, Payment Infrastructure & Enterprise Systems",
+};

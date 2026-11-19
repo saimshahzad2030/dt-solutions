@@ -7,9 +7,9 @@ import { motionProps, staggerProps } from "@/components/motion";
 
 export function LatestBlog() {
   const blogImages = [
-    { slug: "when-an-enterprise-actually-needs-custom-software", img: "/editech/blog-12-410x250.jpg" },
-    { slug: "how-structured-workflows-reduce-response-delays", img: "/editech/blog-11-410x250.jpg" },
-    { slug: "dashboards-that-owners-actually-keep-checking", img: "/editech/blog-10-410x250.jpg" },
+    { slug: "when-an-enterprise-actually-needs-custom-software", img: "/editech/1.jpg" },
+    { slug: "how-structured-workflows-reduce-response-delays", img: "/editech/2.jpg" },
+    { slug: "dashboards-that-owners-actually-keep-checking", img: "/editech/3.jpg" },
   ];
 
   const posts = blogPosts.slice(0, 3);
@@ -19,14 +19,14 @@ export function LatestBlog() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16" {...motionProps({ preset: "fade-up", delay: 50 })}>
           <span className="font-heading text-xs sm:text-sm font-bold tracking-[0.2em] text-[#ee6196] uppercase block mb-3">
-            From our blog
+            Insights
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#121c32] leading-tight">
-            Here&apos;s What&apos;s Happening
+            Perspectives on Digital Transformation
           </h2>
         </div>
 
-        {/* 3 Blog Cards */}
+        {/* 3 Insight Cards — preserving exact images */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" {...staggerProps({ delay: 60, step: 90 })}>
           {posts.map((post, index) => {
             const blogImg = blogImages[index]?.img || "/editech/blog-12-410x250.jpg";
@@ -62,7 +62,7 @@ export function LatestBlog() {
                       </span>
                       <span className="flex items-center gap-1">
                         <User className="w-3.5 h-3.5 text-[#5e6fb5]" />
-                        by DT Solutions
+                        {post.author.name}
                       </span>
                     </div>
 
@@ -84,7 +84,7 @@ export function LatestBlog() {
                     href={`/blog/${post.slug}`}
                     className="inline-flex items-center gap-2 text-xs font-heading font-bold uppercase tracking-wider text-[#5e6fb5] group-hover:text-[#ee6196] transition-colors pt-4"
                   >
-                    <span>Read more</span>
+                    <span>Read Insight</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                   </Link>
                 </div>

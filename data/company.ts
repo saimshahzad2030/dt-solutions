@@ -4,78 +4,59 @@ export interface CompanyInfo {
   tagline: string;
   description: string;
   email: string;
-  phone: string;
-  whatsapp: string;
-  location: string;
-  address: string;
   country: string;
   operatingHours: string;
-  responseTime: string;
   socials: {
     linkedin: string;
     github?: string;
     twitter?: string;
-  };
-  stats: {
-    projectsDelivered: number;
-    clientSatisfaction: number;
-    responseTimeHours: number;
-    uptimePercentage: number;
-    transactionsProcessed: string;
   };
 }
 
 export const companyData: CompanyInfo = {
   name: "DT Solutions",
   legalName: "DT SOLUTIONS (PRIVATE) LIMITED",
-  tagline: "Premium software, websites, and automation for global enterprises",
+  tagline: "Powering Digital Transformation Through Technology & Innovation",
   description:
-    "DT Solutions builds enterprise websites, custom software, executive dashboards, and AI automation systems for organizations that want practical digital growth and dependable operational execution.",
+    "DT Solutions delivers enterprise technology, digital payment infrastructure and government transformation platforms that simplify complex operations and enable scalable digital services.",
   email: "info@dtsolutions.pk",
-  phone: "+92 300 0000000",
-  whatsapp: "+92 300 0000000",
-  location: "Islamabad & Provincial Centers, Pakistan",
-  address: "Islamabad, Pakistan",
   country: "PK",
   operatingHours: "Monday to Saturday (10:00 AM to 7:00 PM PKT)",
-  responseTime: "Within 24 hours",
   socials: {
     linkedin: "https://www.linkedin.com/company/dtsolutionspk",
-    twitter: "https://twitter.com/dtsolutionspk",
-    github: "https://github.com/dtsolutions",
-  },
-  stats: {
-    projectsDelivered: 50,
-    clientSatisfaction: 99,
-    responseTimeHours: 24,
-    uptimePercentage: 99.9,
-    transactionsProcessed: "100K+",
   },
 };
 
+export const focusAreas = [
+  "Government Technology",
+  "FinTech Infrastructure",
+  "Enterprise Solutions",
+  "Digital Platforms",
+] as const;
+
 export const coreValues = [
   {
-    title: "Operational Clarity",
+    title: "Public-Sector & Institutional Clarity",
     description:
-      "We build systems around how decisions get made and how teams actually work, avoiding unnecessary complexity.",
+      "We design systems around institutional workflows, regulatory requirements, and public-service delivery rather than unnecessary complexity.",
     icon: "Target",
   },
   {
-    title: "Production Discipline",
+    title: "Security-First Engineering",
     description:
-      "Every module is engineered for enterprise security, auditable data flow, and long-term maintainability.",
+      "Every platform is built with encryption, role-based access control, auditable transaction trails, and disciplined release governance.",
     icon: "ShieldCheck",
   },
   {
-    title: "Measurable Impact",
+    title: "Scalable Architecture",
     description:
-      "We focus on real outcomes: less manual work, faster response times, and clear data for leadership.",
+      "We build resilient payment rails, API integrations, and enterprise applications engineered to grow cleanly across departments and user bases.",
     icon: "TrendingUp",
   },
   {
-    title: "Dedicated Partnership",
+    title: "Long-Term Stewardship",
     description:
-      "From requirements discovery to long-term post-launch support, we remain an accessible technical ally.",
+      "From architecture discovery through deployment, integration, and ongoing system maintenance, we work alongside client teams as a dependable technical partner.",
     icon: "Users2",
   },
 ];
@@ -84,38 +65,53 @@ export const processSteps = [
   {
     step: "01",
     phase: "Phase 01",
-    title: "Discover & Map",
-    subtitle: "Workflow & Strategy",
+    title: "Discovery & Governance Mapping",
+    subtitle: "Requirements & Institutional Scope",
     description:
-      "We map your current workflows, bottlenecks, and business priorities before proposing an architecture.",
-    deliverables: ["Requirements Specification", "Architecture Blueprint", "Tech Stack Selection"],
+      "We map operational workflows, stakeholder roles, integration dependencies, and security controls before defining system architecture.",
+    deliverables: [
+      "Requirements Specification",
+      "Integration & Architecture Blueprint",
+      "Security & Access Control Plan",
+    ],
   },
   {
     step: "02",
     phase: "Phase 02",
-    title: "Plan & Architect",
-    subtitle: "Milestones & Scope",
+    title: "Architecture & Prototyping",
+    subtitle: "System Design & Milestones",
     description:
-      "A clear implementation roadmap with transparent milestones, deliverables, and security benchmarks.",
-    deliverables: ["Sprint Roadmap", "API Specifications", "Interactive UI Mockups"],
+      "Structured delivery milestones covering data models, API contracts, payment integration flows, and interface design.",
+    deliverables: [
+      "Delivery Roadmap",
+      "API & Schema Specifications",
+      "Interface Prototypes",
+    ],
   },
   {
     step: "03",
     phase: "Phase 03",
-    title: "Build & Iterate",
-    subtitle: "Agile Development",
+    title: "Iterative Engineering & QA",
+    subtitle: "Build, Integrate & Verify",
     description:
-      "Iterative sprints with regular demos, automated testing, and active stakeholder feedback at every stage.",
-    deliverables: ["Weekly Checkpoint Demos", "Unit & Integration Tests", "Staging Deployments"],
+      "Milestone-driven software development with automated testing, security reviews, and structured stakeholder validation.",
+    deliverables: [
+      "Milestone Review Demos",
+      "Automated & Integration Testing",
+      "Staging Verification",
+    ],
   },
   {
     step: "04",
     phase: "Phase 04",
-    title: "Launch & Support",
-    subtitle: "Rollout & Reliability",
+    title: "Deployment & Ongoing Support",
+    subtitle: "Rollout & System Maintenance",
     description:
-      "Smooth production rollout, staff training, and proactive ongoing maintenance to guarantee system health.",
-    deliverables: ["Production Handover", "User Training Guides", "24/7 SLA & Monitoring"],
+      "Controlled production rollout, operational documentation, team onboarding, and structured post-launch monitoring and maintenance.",
+    deliverables: [
+      "Production Deployment",
+      "Operational Documentation & Training",
+      "Ongoing Monitoring & Maintenance",
+    ],
   },
 ];
-

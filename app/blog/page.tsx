@@ -1,17 +1,17 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Clock, Calendar, ArrowRight, BookOpen } from "lucide-react";
+import { Clock, ArrowRight } from "lucide-react";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { Button } from "@/components/shared/Button";
-import { blogPosts, blogCategories } from "@/data/blog";
+import { blogPosts } from "@/data/blog";
 import { motionProps, staggerProps } from "@/components/motion";
 
 export const metadata: Metadata = {
-  title: "Insights & Articles | DT Solutions",
+  title: "Insights | Government Technology, FinTech & Enterprise Engineering",
   description:
-    "Practical writing on software engineering, business automation, executive dashboards, and AI workflows for forward-thinking enterprises.",
+    "Engineering perspectives from DT Solutions on government digital transformation, payment infrastructure, enterprise software architecture, and security engineering.",
   alternates: {
     canonical: "https://dtsolutions.pk/blog",
   },
@@ -24,9 +24,9 @@ export default function BlogListingPage() {
   return (
     <>
       <Breadcrumb
-        items={[{ label: "Insights & Blog" }]}
-        title="Editorial insights for teams improving systems, operations, and credibility"
-        description="Short, grounded engineering perspectives on software architecture, automation pipelines, and enterprise workflows."
+        items={[{ label: "Insights" }]}
+        title="Technical Perspectives on Digital Transformation & Payment Infrastructure"
+        description="Grounded engineering notes covering public-sector digitisation, payment rails, enterprise software architecture, and security practices."
       />
 
       <section className="py-20 lg:py-28 bg-white">
@@ -41,7 +41,7 @@ export default function BlogListingPage() {
               <div className="absolute top-0 right-0 w-96 h-96 bg-accent/15 rounded-full blur-3xl pointer-events-none" />
 
               <div className="relative z-10 max-w-3xl space-y-4">
-                <div className="flex items-center gap-3 text-xs">
+                <div className="flex flex-wrap items-center gap-3 text-xs">
                   <span className="font-bold uppercase tracking-wider text-accent-light bg-white/10 px-3 py-1 rounded-full">
                     {featuredPost.category}
                   </span>
@@ -78,18 +78,18 @@ export default function BlogListingPage() {
             </div>
           </div>
 
-          {/* Regular Posts Grid */}
+          {/* Remaining Posts Grid */}
           <SectionHeader
-            badge="Articles"
-            title="All Latest"
-            titleAccent="Publications"
-            description="Browse all engineering perspectives and business workflow guides."
+            badge="Publications"
+            title="More Engineering"
+            titleAccent="Insights"
+            description="Browse practical briefings on public-sector technology, payment systems, and enterprise architecture."
             align="left"
             className="mb-8"
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" {...staggerProps({ delay: 60, step: 90 })}>
-            {blogPosts.map((post) => (
+            {regularPosts.map((post) => (
               <article
                 key={post.id}
                 className="group bg-surface-muted rounded-2xl border border-slate-200/80 shadow-card-subtle hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col justify-between"
@@ -97,7 +97,7 @@ export default function BlogListingPage() {
               >
                 <div>
                   <div className="relative h-44 bg-gradient-to-br from-dark-950 to-dark-900 p-6 flex flex-col justify-between overflow-hidden">
-                    <div className="relative z-10 flex items-center justify-between">
+                    <div className="relative z-10 flex items-center justify-between gap-2">
                       <span className="text-[11px] font-bold uppercase tracking-wider text-accent-light bg-white/10 px-3 py-1 rounded-full">
                         {post.category}
                       </span>
@@ -130,7 +130,7 @@ export default function BlogListingPage() {
                     href={`/blog/${post.slug}`}
                     className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-primary group-hover:text-accent transition-colors pt-4"
                   >
-                    <span>Read Article</span>
+                    <span>Read Insight</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                   </Link>
                 </div>
@@ -142,4 +142,3 @@ export default function BlogListingPage() {
     </>
   );
 }
-
