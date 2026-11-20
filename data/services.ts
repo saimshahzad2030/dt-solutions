@@ -29,7 +29,7 @@ export const servicesData: ServiceItem[] = [
       "DT Solutions designs and engineers digital transformation platforms for provincial and public-sector institutions. We replace manual counter dependencies and paper-heavy processes with structured e-government applications, digital challan and levy systems, citizen portals, and unified revenue management platforms.",
     iconName: "Landmark",
     badge: "Government Technology",
-    image: "/editech/11.jpg",
+    image: "/editech/11.png",
     targetAudience:
       "Provincial ministries, public authorities, municipal departments, and government agencies modernising tax, fee, levy, and citizen service delivery.",
     capabilities: [
@@ -136,7 +136,7 @@ export const servicesData: ServiceItem[] = [
       "We build dependable internal software tailored to complex organisational operations. From ERP and CRM modules to workflow and process automation (including targeted AI-assisted workflows as a supporting capability), business intelligence dashboards, and enterprise portals, our software eliminates fragmented spreadsheets and strengthens operational visibility.",
     iconName: "Code2",
     badge: "Enterprise Solutions",
-    image: "/editech/13.jpg",
+    image: "/editech/13.png",
     targetAudience:
       "Mid-market and large enterprises, logistics groups, service organisations, and multi-branch institutions streamlining core internal operations.",
     capabilities: [

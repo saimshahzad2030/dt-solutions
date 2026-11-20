@@ -8,17 +8,17 @@ import { portfolioData, portfolioCategories } from "@/data/portfolio";
 import { motionProps } from "@/components/motion";
 
 const projectImages: Record<string, string> = {
-  "B-Pay-balochistan": "/editech/9.jpg",
-  "institutional-digitization": "/editech/10.jpg",
-  "multi-bank-fintech-switch": "/editech/project-3.jpg",
-  "enterprise-operations-portal": "/editech/9.jpg",
-  "ai-intake-automation": "/editech/10.jpg",
+  "B-Pay-balochistan": "/editech/b-pay-balochistan.jpg",
+  "institutional-digitization": "/editech/institutional-digitization.jpg",
+  "multi-bank-fintech-switch": "/editech/multi-bank-fintech-switch.jpg",
+  "enterprise-operations-portal": "/editech/enterprise-operations-portal.jpg",
+  "ai-intake-automation": "/editech/ai-intake-automation.jpg",
 };
 
 const fallbackImages = [
-  "/editech/9.jpg",
-  "/editech/10.jpg",
-  "/editech/project-3.jpg",
+  "/editech/b-pay-balochistan.jpg",
+  "/editech/institutional-digitization.jpg",
+  "/editech/multi-bank-fintech-switch.jpg",
 ];
 
 export function PortfolioShowcase() {

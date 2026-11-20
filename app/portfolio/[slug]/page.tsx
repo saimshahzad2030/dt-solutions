@@ -50,14 +50,14 @@ export default function SinglePortfolioPage({ params }: ProjectPageProps) {
   }
 
   const projectImages: Record<string, string> = {
-    "B-Pay-balochistan": "/editech/9.jpg",
-    "institutional-digitization": "/editech/10.jpg",
-    "multi-bank-fintech-switch": "/editech/project-3.jpg",
-    "enterprise-operations-portal": "/editech/9.jpg",
-    "ai-intake-automation": "/editech/10.jpg",
+    "B-Pay-balochistan": "/editech/b-pay-balochistan.jpg",
+    "institutional-digitization": "/editech/institutional-digitization.jpg",
+    "multi-bank-fintech-switch": "/editech/multi-bank-fintech-switch.jpg",
+    "enterprise-operations-portal": "/editech/enterprise-operations-portal.jpg",
+    "ai-intake-automation": "/editech/ai-intake-automation.jpg",
   };
 
-  const projectImg = projectImages[project.slug] || "/editech/9.jpg";
+  const projectImg = projectImages[project.slug] || "/editech/b-pay-balochistan.jpg";
   const otherProjects = portfolioData.filter((p) => p.slug !== project.slug).slice(0, 3);
 
   return (

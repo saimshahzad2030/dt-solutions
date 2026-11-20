@@ -67,7 +67,7 @@ export default function AboutPage() {
       period: "Enterprise Scale",
       title: "Delivering Secure, Maintainable Core Systems",
       desc: "Across ERP/CRM portals, executive BI dashboards, mobile applications, and cloud infrastructure, we emphasise security-first engineering, clear governance, and long-term operational stewardship.",
-      img: "/editech/5.jpg",
+      img: "/editech/5.png",
     },
   ];
 

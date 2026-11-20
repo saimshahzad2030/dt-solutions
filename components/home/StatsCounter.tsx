@@ -94,7 +94,7 @@ export function StatsCounter() {
               {/* Image 3 - Bottom Left */}
               <div className="relative h-48 sm:h-56 rounded-2xl overflow-hidden shadow-md -mt-6">
                 <Image
-                  src="/editech/5.jpg"
+                  src="/editech/5.png"
                   alt="Operational delivery management"
                   fill
                   className="object-cover"
@@ -104,7 +104,7 @@ export function StatsCounter() {
               {/* Image 4 - Bottom Right */}
               <div className="relative h-48 sm:h-56 rounded-2xl overflow-hidden shadow-md">
                 <Image
-                  src="/editech/6.jpg"
+                  src="/editech/6.png"
                   alt="Technical architecture review"
                   fill
                   className="object-cover"

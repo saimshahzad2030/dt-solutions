@@ -99,7 +99,7 @@ export const portfolioData: PortfolioItem[] = [
       "Payment Gateway APIs",
       "Docker",
     ],
-    image: "/editech/9.jpg",
+    image: "/editech/b-pay-balochistan.jpg",
   },
   {
     id: "institutional-digitization",
@@ -137,7 +137,7 @@ export const portfolioData: PortfolioItem[] = [
       "Revision history and immutable administrative audit logs",
     ],
     techStack: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS", "REST APIs"],
-    image: "/editech/10.jpg",
+    image: "/editech/institutional-digitization.jpg",
   },
   {
     id: "multi-bank-fintech-switch",
@@ -175,7 +175,7 @@ export const portfolioData: PortfolioItem[] = [
       "Structured settlement matching and reconciliation export module",
     ],
     techStack: ["Node.js", "TypeScript", "Redis", "PostgreSQL", "Docker"],
-    image: "/editech/project-3.jpg",
+    image: "/editech/multi-bank-fintech-switch.jpg",
   },
   {
     id: "enterprise-operations-portal",
@@ -213,7 +213,7 @@ export const portfolioData: PortfolioItem[] = [
       "Structured Excel, CSV, and PDF management report exports",
     ],
     techStack: ["Next.js", "React", "TypeScript", "PostgreSQL", "Tailwind CSS"],
-    image: "/editech/9.jpg",
+    image: "/editech/enterprise-operations-portal.jpg",
   },
   {
     id: "ai-intake-automation",
@@ -251,7 +251,7 @@ export const portfolioData: PortfolioItem[] = [
       "Audit trail of intake categorisation and assignment actions",
     ],
     techStack: ["Python", "Node.js", "PostgreSQL", "Next.js", "REST APIs"],
-    image: "/editech/10.jpg",
+    image: "/editech/ai-intake-automation.jpg",
   },
 ];
 

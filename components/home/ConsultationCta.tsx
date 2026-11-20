@@ -13,7 +13,7 @@ export function ConsultationCta() {
           {/* Preserved Background Image */}
           <div className="absolute inset-0 z-0 opacity-20">
             <Image
-              src="/editech/7.jpg"
+              src="/editech/7.png"
               alt="Contact Background"
               fill
               className="object-cover"

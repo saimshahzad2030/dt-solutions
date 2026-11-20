@@ -10,7 +10,7 @@ export function Testimonials() {
     <section className="py-20 lg:py-28 bg-white relative overflow-hidden" id="testimonials">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: Engineering & Delivery Ethos (preserves /editech/8.jpg) */}
+          {/* Left Column: Engineering & Delivery Ethos (preserves /editech/8.png) */}
           <div className="lg:col-span-6 space-y-6" {...motionProps({ preset: "fade-up", delay: 100 })}>
             <span className="font-heading text-xs sm:text-sm font-bold tracking-[0.2em] text-[#ee6196] uppercase block">
               {engineeringPerspective.eyebrow}
@@ -32,7 +32,7 @@ export function Testimonials() {
               <div className="flex items-center gap-4 pt-4 border-t border-slate-200">
                 <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[#5e6fb5] flex-shrink-0">
                   <Image
-                    src="/editech/8.jpg"
+                    src="/editech/8.png"
                     alt="DT Solutions Engineering Practice"
                     fill
                     className="object-cover"
